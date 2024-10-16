@@ -64,6 +64,12 @@ $$
 \end{aligned}
 $$
 
+Additionally, the constant $\alpha$ is defined as:
+
+$$
+\alpha = C_d \pi d_{a1} \sqrt{\frac{2P_s - x}{\rho}}
+$$
+
 ### Simulation Without Position Control
 In this part, we simulate the system's behavior without a feedback position controller. The simulation involves step changes in the input voltage and analysis of the resulting flow rate and valve position.
 
