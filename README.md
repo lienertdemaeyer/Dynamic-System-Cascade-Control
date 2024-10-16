@@ -165,11 +165,11 @@ Simulations were carried out for different values of $K_e$ and $c$. Key observat
 
 ## Simulation of the Dynamic Behavior of the Solenoid Valve
 
-### State Equations of the Solenoid Valve
+### State Equations for the Solenoid Valve
 
-The states are chosen as:
+We define the states as:
 
-\[
+$$
 \left\{
     \begin{array}{ll}
         x_1 = x \\
@@ -177,72 +177,75 @@ The states are chosen as:
         x_3 = i \\
     \end{array}
 \right.
-\]
-
-The system equations for the mechanical and electrical coils are solved for \(\dot{x_2}\) and \(\dot{x_3}\), respectively.
+$$
 
 #### Mechanical Coil:
-\[
-m\ddot{x} + c\dot{x} + kx = K_c i
-\]
 
-This leads to the following state equation:
-\[
+The system equation for the mechanical coil becomes:
+
+$$
 \dot{x_2} = -\frac{k}{m}x_1 - \frac{c}{m}x_2 + \frac{K_c}{m}x_3
-\]
+$$
 
 #### Electrical Coil:
-\[
-v - v_b = L\frac{di}{dt} + Ri
-\]
 
-With \(v_b = K_e\dot{x}\), the state equation becomes:
-\[
+Using the system equation for the electrical coil:
+
+$$
 \dot{x_3} = -\frac{K_e}{L}x_2 - \frac{R}{L}x_3 + \frac{v}{L}
-\]
+$$
 
 #### State-Space Representation:
-\[
+
+The state-space representation is given by:
+
+$$
 \begin{bmatrix}
-\dot{x_1}\\
-\dot{x_2}\\
-\dot{x_3}
+\dot{x_1} \\
+\dot{x_2} \\
+\dot{x_3} \\
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 & 1 & 0\\
--\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m}\\
-0 & -\frac{K_e}{L} & -\frac{R}{L}
+0 & 1 & 0 \\
+-\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m} \\
+0 & -\frac{K_e}{L} & -\frac{R}{L} \\
 \end{bmatrix}
 \begin{bmatrix}
-x_1\\
-x_2\\
-x_3
+x_1 \\
+x_2 \\
+x_3 \\
 \end{bmatrix}
 +
 \begin{bmatrix}
-0\\
-0\\
-\frac{1}{L}
-\end{bmatrix}v
-\]
+0 \\
+0 \\
+\frac{1}{L} \\
+\end{bmatrix}
+v
+$$
 
-The output equation is:
+#### Output Equation:
 
-\[
+$$
 y =
 \begin{bmatrix}
-1 & 0 & 0\\
-\alpha & 0 & 0
+1 & 0 & 0 \\
+\alpha & 0 & 0 \\
 \end{bmatrix}
 \begin{bmatrix}
-x_1\\
-x_2\\
-x_3
+x_1 \\
+x_2 \\
+x_3 \\
 \end{bmatrix}
-\]
+$$
 
-with \(\alpha = C_d \pi d_{a1} \sqrt{P_s\frac{2}{\rho}}x\).
+where:
+
+$$
+\alpha = C_d \pi d_{a1} \sqrt{P_s \frac{2}{\rho}} x
+$$
+
 
 
 
