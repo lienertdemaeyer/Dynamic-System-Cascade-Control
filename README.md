@@ -15,12 +15,30 @@
 This project focuses on the application of a dynamic system for cascade control of the liquid level in a water tank. It includes an in-depth analysis of a solenoid valve, which can control the inflow rate of liquid into a tank. The solenoid valve is represented as a mass-spring-damper system, with a proportional relationship between electric current and magnetic force. This project also includes mathematical derivations of system transfer functions and a state-space representation.
 
 ## Transfer Function of the Solenoid Valve
-The solenoid valve in this system can be modeled as a mass-spring-damper system. Below, we derive its transfer function, both for an evaluation model that considers all dynamics, and a design model that simplifies the system.
+
+The solenoid valve in this system can be modeled as a mass-spring-damper system. It controls the flow rate in a fluid tank by adjusting the position of a mechanical spool within the valve. This spool moves in response to an electromagnet, driven by an electric current through a coil, which induces a force on the spool. Below, we derive its transfer function, both for an evaluation model that considers all dynamics, and a design model that simplifies the system.
 
 ### Transfer Function Evaluation Model
-The equation of motion for the mechanical part of the solenoid valve, treated as a mass-spring-damper system, is given by:
 
-$$m\frac{d^2x}{dt^2} + c\frac{dx}{dt} + kx = K_c i(t)$$
+The mechanical spool is treated as a mass-spring-damper system, where the mass is \( m \), the damping coefficient is \( c \), and the spring constant is \( k \). When an electric current \( i(t) \) passes through the coil, it generates a magnetic force \( F(t) \) on the spool, given by:
+
+$$
+F(t) = B_c l_c i = K_c i(t)
+$$
+
+where:
+- \( B_c \) is the magnetic flux density,
+- \( l_c \) is the length of the electrical conductor,
+- \( i(t) \) is the electric current,
+- \( K_c \) is the electromechanical coupling constant.
+
+This force drives the motion of the mechanical spool, and the equation of motion can be written as:
+
+$$
+m\frac{d^2x}{dt^2} + c\frac{dx}{dt} + kx = K_c i(t)
+$$
+
+where \( x(t) \) is the relative position of the spool. This forms the basis for analyzing the dynamic behavior of the solenoid valve.
 
 where:
 - \(m\): Mass of the moving element
