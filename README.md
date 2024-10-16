@@ -416,17 +416,17 @@ $$
 The state equation in matrix form becomes:
 
 $$
+\[
 \begin{bmatrix}
 \dot{x_1}\\
 \dot{x_2}\\
 \dot{x_3}\\
 \dot{x_4}\\
-\end{bmatrix}
-=
+\end{bmatrix}=
 \begin{bmatrix}
 0 & 1 & 0 & 0\\
--\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m} & 0\\
-0 & -\frac{K_e}{L} & -\frac{R}{L} & \frac{1}{L}\\
+-\frac{k}{m} & -\frac{c}{m} & \frac{K_{c}}{m} & 0\\
+0 & -\frac{K_{e}}{L} & -\frac{R}{L} & \frac{1}{L}\\
 -\frac{K_{rc}}{\tau_{ic}} & -K_{rc} & 0 & 0\\
 \end{bmatrix}
 \begin{bmatrix}
@@ -434,8 +434,7 @@ x_1\\
 x_2\\
 x_3\\
 x_4\\
-\end{bmatrix}
-+
+\end{bmatrix}+
 \begin{bmatrix}
 0 & 0\\
 0 & 0\\
@@ -444,8 +443,9 @@ x_4\\
 \end{bmatrix}
 \begin{bmatrix}
 x_r\\
-v_{noise}\\
+v_{ruis}\\
 \end{bmatrix}
+\]
 $$
 
 
