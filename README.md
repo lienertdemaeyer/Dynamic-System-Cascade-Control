@@ -51,13 +51,15 @@ where:
 We define the states as:
 
 $$
+$$
 \left\{
     \begin{array}{ll}
-        x_1 = x \\
-        x_2 = \dot{x} \\
-        x_3 = i \\
+        \ x_1=x \\
+        \ x_2=\dot{x} \\
+        \ x_3=i \\
     \end{array}
 \right.
+$$
 $$
 
 #### Mechanical Coil:
