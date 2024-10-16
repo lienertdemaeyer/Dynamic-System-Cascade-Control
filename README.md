@@ -267,6 +267,105 @@ Simulations were carried out for different values of $K_e$ and $c$. Key observat
 ![Klepstand van de solenoïdeklep zonder positieregelaar](https://github.com/user-attachments/assets/836d6dfb-d5c3-4a1c-872c-e54016bd3e51)
 
 
+## Simulation of Flow Rate and Valve Position with Position Control
+
+### P-Controller
+
+#### P-Controller Evaluation Model
+
+For the P-controller, the following applies:
+
+$$
+v_{in} = K_c e(t) = K_c (r_v - x_1)
+$$
+
+where:
+- \( r_v \) is the reference position,
+- \( x_1 = x \) is the valve position.
+
+Substituting this into the state-space equations of the solenoid valve derived in section 1.2.1, where \( v_{in} = v_n + v_{ruis} \), we get:
+
+$$
+\begin{bmatrix}
+\dot{x_1} \\
+\dot{x_2} \\
+\dot{x_3}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 1 & 0 \\
+-\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m} \\
+0 & -\frac{K_e}{L} & -\frac{R}{L}
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{bmatrix}
++
+\begin{bmatrix}
+0 \\
+\frac{K_c}{m} \\
+\frac{K_c}{L}
+\end{bmatrix}
+(r_v - x_1) + 
+\begin{bmatrix}
+0 \\
+0 \\
+\frac{1}{L}
+\end{bmatrix}
+v_{ruis}
+$$
+
+#### P-Controller Design Model
+
+In the design model, \( x_3 = 0 \), leading to:
+
+$$
+0 = \frac{K_c}{L}x_1 - \frac{K_c}{L}r_v - \frac{R}{L}x_3 + \frac{1}{L}v_{ruis}
+$$
+
+Solving for \( x_3 \) gives:
+
+$$
+x_3 = \frac{K_c}{R}r_v - \frac{K_c}{R}x_1 + \frac{1}{R}v_{ruis}
+$$
+
+Substituting this into \( \dot{x_2} \) yields:
+
+$$
+\dot{x_2} = -\frac{k}{m}x_1 - \frac{c}{m}x_2 + \frac{K_c K_e}{mL}x_1 - \frac{K_c^2}{mL}r_v + \frac{K_c}{mR}v_{ruis}
+$$
+
+Thus, the state-space equation for the design model with a P-controller is:
+
+$$
+\begin{bmatrix}
+\dot{x_1} \\
+\dot{x_2}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 1 \\
+-\left(\frac{k}{m} + \frac{K_c K_e}{mL}\right) & -\frac{c}{m}
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2
+\end{bmatrix}
++
+\begin{bmatrix}
+0 \\
+-\frac{K_c^2}{mL}
+\end{bmatrix}
+r_v
++
+\begin{bmatrix}
+0 \\
+\frac{K_c}{mR}
+\end{bmatrix}
+v_{ruis}
+$$
 
 
 
