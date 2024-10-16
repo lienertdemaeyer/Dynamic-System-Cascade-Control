@@ -267,6 +267,11 @@ Simulations were carried out for different values of $K_e$ and $c$. Key observat
 ![Klepstand van de solenoïdeklep zonder positieregelaar](https://github.com/user-attachments/assets/836d6dfb-d5c3-4a1c-872c-e54016bd3e51)
 
 
+
+
+
+
+
 ## Simulation of Flow Rate and Valve Position with Position Control
 
 ### P-Controller
@@ -290,8 +295,7 @@ $$
 \dot{x_1} \\
 \dot{x_2} \\
 \dot{x_3}
-\end{bmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
 0 & 1 & 0 \\
 -\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m} \\
@@ -308,7 +312,7 @@ x_3
 \frac{K_c}{m} \\
 \frac{K_c}{L}
 \end{bmatrix}
-(r_v - x_1) + 
+(r_v - x_1) +
 \begin{bmatrix}
 0 \\
 0 \\
@@ -366,6 +370,7 @@ r_v
 \end{bmatrix}
 v_{ruis}
 $$
+
 
 
 
