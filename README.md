@@ -954,6 +954,7 @@ In Figure \ref{fig:bodeplot_P-reg_eval_open}, the Bode diagram of the open-loop 
 In Table \ref{tab:Amp_en_fasemarges}, the values of the amplitude and phase margins for the different $K_{r_c}$ values are presented. As the gain of the P-controller increases, these margins decrease, indicating that the closed-loop system becomes less immune or robust to unmodeled dynamic phenomena. At a gain of 400,000, the phase margin even becomes negative, indicating that the closed-loop system is no longer stable.
 
 ![P-regelaar_evaluatiemodel_Go](https://github.com/user-attachments/assets/ef034a88-3a47-4bda-93b7-2252c55a613a)
+
 *Figure 1: Bode diagram of the open-loop transfer function with P-controller for the evaluation model*
 
 | $K_{r_c}$ | Gain Margin (dB) | Phase Margin (°) |
@@ -976,6 +977,7 @@ For the design model, the transfer function $G_r(s)$ looks different and is seco
 Additionally, it is noticeable that for a gain of 400,000, the phase margin is no longer negative, meaning that the system remains stable and insensitive to unmodeled dynamic phenomena.
 
 ![P-regelaar_ontwerpmodel_Go](https://github.com/user-attachments/assets/ff8f8cca-8562-4083-b6f7-346221f617a0)
+
 *Figure 2: Bode diagram of the open-loop transfer function with P-controller for the design model*
 
 | $K_{r_c}$ | Gain Margin (dB) | Phase Margin (°) |
@@ -1001,6 +1003,7 @@ The integrating action (I-action) of the PI-controller is visible in the magnitu
 Table \ref{tab:Amp_en_fasemarges3} shows the amplitude and phase margins corresponding to the Bode diagram of the open-loop transfer function with the PI-controller for the evaluation model. It can be observed that, once again, as the gain $K_{r_c}$ increases, the margins decrease, making the system with a PI-controller less robust or immune to unmodeled dynamic phenomena. The closed-loop system will become unstable at a gain of 400,000 V/m as the phase margin becomes negative. Compared to the evaluation model with the P-controller, these margins are smaller, indicating that a lower gain $K_{r_c}$ is preferable to maintain robustness.
 
 ![PI_regelaar_evaluatiemodel_Go](https://github.com/user-attachments/assets/2eb794d4-bf5a-4001-b9cc-60a18816001c)
+
 *Figure 3: Bode diagram of the open-loop transfer function with PI-controller for the evaluation model*
 
 | $K_{r_c}$ | Gain Margin (dB) | Phase Margin (°) |
@@ -1023,6 +1026,7 @@ The Bode diagrams of the open-loop transfer function with the PI-controller for 
 As with the design model for the P-controller, the $-180^\circ$ phase is never exactly reached, resulting in infinitely large gain margins. This can be seen in Table \ref{tab:Amp_en_fasemarges4}, which displays the amplitude and phase margins corresponding to Figure \ref{fig:bodeplot_PI-reg_ontw_open}. It is also evident that for a gain of 400,000, the phase margin remains positive, meaning the system remains stable.
 
 ![PI-regelaar_ontwerpmodel_Go](https://github.com/user-attachments/assets/de9f1f48-8065-4ea9-82c9-6f3c10b147b2)
+
 *Figure 4: Bode diagram of the open-loop transfer function with PI-controller for the design model*
 
 | $K_{r_c}$ | Gain Margin (dB) | Phase Margin (°) |
@@ -1058,21 +1062,25 @@ At high frequencies, the magnitude drops for both the P- and PI-controllers. Thi
 #### P-Controller: Evaluation Model
 
 ![P-regelaar_evaluatiemodel_Gt](https://github.com/user-attachments/assets/54de635d-bfe5-4a9e-92c7-f4ee58a5754d)
+
 *Figure 5: Magnitude plot of the closed-loop transfer function with P-controller for the evaluation model*
 
 #### P-Controller: Design Model
 
 ![P-regelaar_ontwerpmodel_Gt](https://github.com/user-attachments/assets/3d6cb48c-2412-44b0-8e8b-bf3fa320ebbe)
+
 *Figure 6: Magnitude plot of the closed-loop transfer function with P-controller for the design model*
 
 #### PI-Controller: Evaluation Model
 
 ![PI_regelaar_evaluatiemodel_Gt](https://github.com/user-attachments/assets/91eaa7a2-3f37-40b2-94c3-9163c015a544)
+
 *Figure 7: Magnitude plot of the closed-loop transfer function with PI-controller for the evaluation model*
 
 #### PI-Controller: Design Model
 
 ![PI-regelaar_ontwerpmodel_Gt](https://github.com/user-attachments/assets/5a3b405c-7103-4f70-987f-70f278b277dd)
+
 *Figure 8: Magnitude plot of the closed-loop transfer function with PI-controller for the design model*
 
 
@@ -1108,6 +1116,7 @@ As the gain increases, the plots shift to the right, meaning the system becomes 
 In conclusion, at low frequencies, increasing $K_{rc}$ is beneficial as it makes the closed-loop transfer function less sensitive to noise. However, the advantages at low frequencies are offset by disadvantages at higher frequencies near $M_s$, where the system becomes more prone to instability. At even higher frequencies beyond $M_s$, all plots converge to 0 dB, where $|S| = \left|\frac{1}{1+G_{cp} G_r}\right| = 1$, meaning the system is no more or less sensitive to process variations.
 
 ![P-regelaar_evaluatiemodel_S_nieuw](https://github.com/user-attachments/assets/d9a858b0-8b97-47ef-afd6-2bcad7d70a8d)
+
 *Figure 1: Magnitude plot of the sensitivity function with P-controller for the evaluation model*
 
 #### P-Controller: Design Model
@@ -1115,6 +1124,7 @@ In conclusion, at low frequencies, increasing $K_{rc}$ is beneficial as it makes
 The design model for the P-controller shows the same trends as the evaluation model. However, the maximum peak height is lower for each gain, meaning that by neglecting the dynamics of the electric coil, more stable behavior can be achieved near the $M_s$ frequencies for each gain.
 
 ![P-regelaar_ontwerpmodel_S_nieuw](https://github.com/user-attachments/assets/f62f5d2d-c27e-49c8-bfa5-b3c49dad2bfa)
+
 *Figure 2: Magnitude plot of the sensitivity function with P-controller for the design model*
 
 #### PI-Controller: Evaluation Model
@@ -1122,6 +1132,7 @@ The design model for the P-controller shows the same trends as the evaluation mo
 For the PI-controller, the sensitivity continues to decrease at lower frequencies, meaning that the PI-controller is better at suppressing process noise than the P-controller, thereby better tracking the reference signal. Interestingly, for $K_{rc}=400000$, the $M_s$ is slightly lower than for $K_{rc}=100000$, meaning that for frequencies near $M_s$, the system with higher $K_{rc}$ is slightly more stable than with a lower $K_{rc}$ value.
 
 ![PI-regelaar_evaluatiemodel_S_nieuw](https://github.com/user-attachments/assets/381a08b2-5f5c-45ca-9528-f4ad038649ed)
+
 *Figure 3: Magnitude plot of the sensitivity function with PI-controller for the evaluation model*
 
 #### PI-Controller: Design Model
