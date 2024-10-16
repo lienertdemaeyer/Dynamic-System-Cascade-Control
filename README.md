@@ -505,6 +505,33 @@ v_{ruis}\\
 $$
 
 
+### P-Controller MATLAB Simulations
+
+The behavior of the valve position was simulated with a P-controller using the following parameter values:
+
+$$x = 0.002\ m \qquad c = 0.4\ Ns/m \qquad K_e = 0\ Vs/m$$
+
+After 2 seconds, a step input was applied, and the simulations were performed for the following $K_{rc}$ values:
+
+$$10\ kV/m \qquad 20\ kV/m \qquad 30\ kV/m \qquad 50\ kV/m \qquad 100\ kV/m \qquad 400\ kV/m$$
+
+#### Figure 1
+The plot below shows the valve position [$m$] over time [$s$] for different $K_{rc}$ values using the P-controller.
+
+![klepstand van de solenoïdklep met P-regelaar 3](https://github.com/user-attachments/assets/b57e0d82-df7d-4ac6-8606-5cb071459532)
+
+It can be observed that at $K_{rc} = 400\ kV/m$, the evaluation model becomes unstable, while the design model remains stable and will evolve towards the desired valve position of $x = 0.002\ m$. This is due to the design model having one less pole (2 poles instead of 3). The design model is an approximation, and as the dynamics increase (with a higher $K_{rc}$), this leads to errors. The stronger the $K_{rc}$, the larger the overshoot, resulting in more oscillations. For example, with $K_{rc} = 10\ kV/m$, the output of the evaluation model (solid blue line) quickly evolves towards equilibrium, while for $K_{rc} = 100\ kV/m$, the output shows a damped sinusoidal behavior in response to the step input. Despite the slower response for higher $K_{rc}$ values, the output still reaches the desired valve position of $x = 0.002\ m$, which is not always the case for lower $K_{rc}$ values.
+
+#### Figure 2
+The following plot shows the valve position [$m$] over time [$s$] with the P-controller at $K_{rc} = 400\ kV/m$ for the evaluation model.
+
+![klepstand van de solenoïdklep met P-regelaar 2](https://github.com/user-attachments/assets/963a22b1-2671-4806-b8c7-173889a6b148)
+
+#### Figure 3
+The plot below shows the valve position [$m$] over time [$s$] with the P-controller at $K_{rc} = 400\ kV/m$ for the design model.
+
+![klepstand van de solenoïdklep met P-regelaar 1](https://github.com/user-attachments/assets/75a7a743-e67d-4f45-b0ef-0712f842feda)
+
 
 
 
