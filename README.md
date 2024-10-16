@@ -535,6 +535,16 @@ The plot below shows the valve position [$m$] over time [$s$] with the P-control
 
 
 
+### PI-Controller MATLAB Simulation
+
+The behavior of the valve position was simulated with a PI-controller using the following parameter values:
+
+$$K_{rc} = 20\ kV/m \qquad \tau_{ic} = 0.5\ s \qquad \tau_{ic} = 1\ s \qquad \tau_{ic} = 1.5\ s \qquad \tau_{ic} = 2\ s$$
+
+The plot below shows the valve position [$m$] over time [$s$] with different $\tau_{ic}$ values for the PI-controller.
+
+![Klepstand van de solenoïdklep met PI-regelaar](https://github.com/user-attachments/assets/bef19d17-0de9-449c-9fdf-69fc6d1eaa8c)
+
 
 
 
