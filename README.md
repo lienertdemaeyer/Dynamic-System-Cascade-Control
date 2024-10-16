@@ -187,23 +187,23 @@ $$
 The state-space representation is:
 
 $$
-\begin{pmatrix}
+\begin{bmatrix}
 \dot{x}_1 \\ \dot{x}_2 \\ \dot{x}_3
-\end{pmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
 0 & 1 & 0 \\
 -\dfrac{k}{m} & -\dfrac{c}{m} & \dfrac{K_c}{m} \\
 0 & -\dfrac{K_e}{L} & -\dfrac{R}{L}
 \end{bmatrix}
-\begin{pmatrix}
+\begin{bmatrix}
 x_1 \\ x_2 \\ x_3
-\end{pmatrix}
+\end{bmatrix}
 +
-\begin{pmatrix}
+\begin{bmatrix}
 0 \\ 0 \\ \dfrac{1}{L}
-\end{pmatrix} v
+\end{bmatrix} v
 $$
+
 
 
 
