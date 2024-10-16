@@ -581,3 +581,12 @@ The plot below shows the valve position [m] over time [s] with different $\tau_{
 | 20000          | 2          | -66.9149; -1.2300+3.8331i; -1.2300-3.8331i; -0.4918 | -0.4918; -1.3541+3.7993i; -1.3541-3.7993i |
 
 
+
+### Advantages of Feedback
+
+#### First Advantage of Feedback
+System errors (static errors) caused by stationary (constant) disturbances can be reduced (disturbance rejection) in a feedback system compared to an open-loop system by a factor of $1 + AK_{rc}$, where $AK_{rc}$ represents the loop gain for $s=0$.
+
+#### Second Advantage of Feedback
+In a closed-loop system, the static gain ($s=0$) is much less sensitive to variations in the gain $A$ of the physical system than in an open-loop system. This sensitivity decreases by a factor of $1 + AK_{rc}$, meaning that with a very large static gain $K_{rc}$ from the controller, the sensitivity to variations in parameter $A$ approaches zero.
+
