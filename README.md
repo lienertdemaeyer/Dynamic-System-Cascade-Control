@@ -590,3 +590,81 @@ System errors (static errors) caused by stationary (constant) disturbances can b
 #### Second Advantage of Feedback
 In a closed-loop system, the static gain ($s=0$) is much less sensitive to variations in the gain $A$ of the physical system than in an open-loop system. This sensitivity decreases by a factor of $1 + AK_{rc}$, meaning that with a very large static gain $K_{rc}$ from the controller, the sensitivity to variations in parameter $A$ approaches zero.
 
+
+
+## Pole-Zero Analysis
+
+The roots of the characteristic equation of a transfer function provide important insights into the stability and response of a system, which directly impacts system performance. By graphically plotting the roots in the s-plane as a function of a parameter $K$, this procedure systematically analyzes system behavior over 12 key steps. The open-loop transfer function $G(s)$ has $m$ zeros and $n$ poles, while the corresponding closed-loop transfer function $G_t(s)$ has closed-loop zeros and poles.
+
+The main steps include:
+- Writing the characteristic equation as $1 + KG(s) = 0$
+- Factoring the transfer function $G(s)$
+- Plotting the poles and zeros in the s-plane
+- Determining the branches of the root locus (pole-zero plot)
+- Finding real axis segments, symmetry, departure, and arrival angles
+- Identifying asymptotes, multiple roots, and points where the root locus crosses the imaginary axis
+
+This method helps in visualizing how system poles move as the gain $K$ changes, providing a graphical way to assess system stability and dynamic behavior. Below, we apply this procedure to Transfer Function 1, where we explore its poles and zeros.
+
+
+
+
+### Transfer Function 1
+
+The transfer function is given as:
+
+$$
+KG(s) = \frac{K(s+1)}{s^4+4s^3+6s^2+4s}
+$$
+
+#### Key Steps:
+1. **Characteristic Equation**: Rewrite the characteristic equation as:
+   $$
+   1 + KG(s) = 1 + \frac{K(s+1)}{s^4+4s^3+6s^2+4s} = 0
+   $$
+
+2. **Factorization**: Factor the numerator and denominator:
+   $$
+   1 + KG(s) = 1 + \frac{K(s+1)}{s(s+2)(s+1 \pm j)}
+   $$
+
+3. **Poles and Zeros**: 
+   - Zero: $z_1 = -1$
+   - Poles: $p_1 = 0$, $p_2 = -2$, $p_3 = -1 - j$, $p_4 = -1 + j$
+
+   ![pn1](https://github.com/user-attachments/assets/5af0b392-a10d-4d9d-8196-c0a9e1b972e5)
+
+4. **Branches of the Pole-Zero Plot**: 
+   - Four branches exist: one ends at the finite zero $z_1 = -1$, while the remaining three tend to infinity. 
+
+5. **Segments on the Real Axis**: 
+   - Points on the real axis between $(-\infty, -2]$ and $[-1, 0]$ belong to the pole-zero plot as they satisfy the angle criterion.
+
+6. **Symmetry**: 
+   - The pole-zero plot is symmetric about the real axis.
+
+7. **Departure and Arrival Angles**: 
+   - The departure angle for pole $p_1 = 0$: $\vartheta_{p_1} = 180^\circ$
+   - The departure angle for pole $p_2 = -2$: $\vartheta_{p_2} = 180^\circ$
+   - The departure angles for poles $p_3 = -1 - j$ and $p_4 = -1 + j$: $\vartheta_{p_3} = \vartheta_{p_4} = 0^\circ$
+
+   - The arrival angle at zero $z_1 = -1$: $\vartheta_{z_1} = 0^\circ$
+
+8. **Asymptotes**: 
+   - The intercept $\sigma_c$ is given by:
+     $$
+     \sigma_c = -\frac{\sum z_i - \sum p_j}{n-m} = -1
+     $$
+   - The asymptote angles are:
+     - $k=0$: $\vartheta_0 = 60^\circ$
+     - $k=1$: $\vartheta_1 = 180^\circ$
+     - $k=2$: $\vartheta_2 = 300^\circ$
+
+#### Pole-Zero Plot
+
+The final pole-zero plot for Transfer Function 1 is shown below:
+
+![pb1](https://github.com/user-attachments/assets/d78e3acb-6932-45cf-96d1-e5faacec3d87)
+
+
+
