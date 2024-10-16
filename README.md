@@ -827,5 +827,154 @@ The final pole-zero plot for Transfer Function 4 is shown above.
 
 
 
+### Pole-Zero Plot of the Solenoid Valve
+
+In this section, the pole-zero plot of the closed-loop transfer function of the solenoid valve is calculated, with the gain $K_{rc}$ as the variable parameter. The simulation is performed using MATLAB for both the P-controller and the PI-controller (with $\tau_{ic} = 1s$), for both the evaluation model and the design model. The equations for the solenoid valve are repeated below:
+
+#### Evaluation Model:
+$$
+\frac{x}{v} = \frac{\frac{K_c}{kR}}{a_0s^3+a_1s^2+a_2s+1}
+$$
+
+#### Design Model (Neglecting Coil Dynamics):
+$$
+\frac{x}{v}=\frac{\frac{K_c}{Rk}}{a_0s^2+a_1s+1}
+$$
+
+### Closed-Loop System with P-Controller
+
+#### Evaluation Model
+The pole-zero plot of the closed-loop system with the P-controller for the evaluation model is shown below:
+
+![P-eval](https://github.com/user-attachments/assets/eba7ef2d-d7b4-4c40-8d0e-eec86f6422fb)
+
+- **Poles**: $p_1 = -0.62$, $p_2 = -2.58$, $p_3 = -66.7$
+- The real axis segments of the pole-zero plot are located left of $p_3$ and between $p_1$ and $p_2$. There is a breakout point at $s = -1.59$ between $p_1$ and $p_2$.
+- Since all branches go to infinity and there are no zeros, the system will become unstable with an increase in gain $K_{c}$ as the pole-zero plot partly lies in the right half of the plane.
+
+#### Design Model
+The pole-zero plot for the design model with the P-controller is shown below:
+
+![P-ontwerpzoom](https://github.com/user-attachments/assets/f464ff6c-de50-4c26-9237-d493664a03eb)
+
+- **Poles**: $p_1 = -0.62$, $p_2 = -2.58$
+- The real axis between the poles belongs to the pole-zero plot, with a breakout point at $s = -1.60$. Both branches asymptotically go to infinity with angles of $90^\circ$ and $-90^\circ$.
+- As the entire pole-zero plot lies in the left half of the plane, the system remains stable according to the design model. However, this model does not accurately reflect the behavior of the evaluation model, as the design model always predicts stability.
+
+
+
+
+### Closed-Loop System with PI-Controller
+
+#### Evaluation Model
+The pole-zero plot of the closed-loop system with the PI-controller for the evaluation model is shown below:
+
+![PI-eval](https://github.com/user-attachments/assets/b1c11486-85ad-450c-a88d-4f97c623701f)
+
+- **Poles**: $p_1 = 0$, $p_2 = -0.62$, $p_3 = -2.58$, $p_4 = -66.7$
+- **Zero**: $z_1 = -1$
+- The real axis segments of the pole-zero plot are located left of $p_4$, between $p_3$ and $z_1$, and between $p_1$ and $p_2$. The breakout point between $p_1$ and $p_2$ is $s = -0.362$.
+- Since part of the pole-zero plot lies in the right half of the plane, the system will become unstable with an increase in gain $K_c$.
+
+#### Design Model
+The pole-zero plot for the design model with the PI-controller is shown below:
+
+![PI-ontwerp](https://github.com/user-attachments/assets/93432916-4ec3-4aaa-a801-871b1f62c88f)
+
+- **Poles**: $p_1 = 0$, $p_2 = -0.62$, $p_3 = -2.58$
+- **Zero**: $z_1 = -1$
+- The real axis segments are between $p_3$ and $z_1$ and between $p_1$ and $p_2$. The breakout point between $p_1$ and $p_2$ is at $s = -0.362$. The branches from $p_1$ and $p_2$ asymptotically go to infinity with angles of $90^\circ$ and $-90^\circ$.
+- The entire pole-zero plot lies in the left half of the plane, meaning that according to the design model, the system remains stable regardless of the gain $K_c$. However, the design model is not an accurate reflection of the evaluation model, as it always predicts stability.
+
+
+### Analysis of Control Systems in the Frequency Domain
+
+#### Bode Analysis of the Dynamic Behavior of the Solenoid Valve with Position Control
+
+Using the Bode diagram of the system, it can be determined whether the system is stable. The Bode diagram consists of two plots: a magnitude plot showing $20\log_{10}|G(j\omega)|$, expressed in decibels ($dB$), as a function of frequency $\omega$, expressed in rad/s, and a phase plot showing $\angle G(j\omega)$, expressed in degrees, also as a function of $\omega$. The stability of the closed-loop system can be determined using the Nyquist stability criterion. This criterion states that for a stable open-loop system, the closed-loop system will be stable if $|G_o(j\omega)| < 1$ when $\text{arg}[G_o(j\omega)] = -180^\circ$.
+
+The closed-loop system must have a certain level of immunity to unmodeled dynamic phenomena. The **gain margin** (amplitude margin) is defined as the extra number of $dB$ by which the open-loop magnitude $|G_o(j\omega_p)|$ can increase at the phase crossover frequency $\omega_p$ before the magnitude reaches one. The phase crossover frequency is the frequency at which the phase of $G_o(s)$ equals $-180^\circ$ or $\text{arg}[G_o(j\omega)] = -180^\circ$. The smaller $|G_o(j\omega_p)|$ is compared to one, the more immune the closed-loop system is to unmodeled dynamics. The **phase margin** is defined as the extra number of degrees by which the open-loop phase $\text{arg}[G_o(j\omega_g)]$ can increase at the gain crossover frequency $\omega_g$ before the phase reaches $-180^\circ$. The gain crossover frequency is the frequency where the open-loop gain equals one. The gain margin and phase margin can be calculated using MATLAB.
+
+#### Magnitude and Phase Plot of the Open-Loop Transfer Function
+
+The Bode diagrams of the open-loop transfer function were calculated using MATLAB for various values of the gain $K_{r_c}$, along with the corresponding amplitude and phase margins. The open-loop transfer function of the solenoid valve with position control can be written as:
+
+$$
+G_o(s) = G_r(s)G_{cp}(s)
+$$
+
+where $G_{cp}(s)$ is the transfer function of the solenoid valve derived in Section 1.1, and $G_r(s)$ is the transfer function of the controller. For the P-controller, this is:
+
+$$
+G_r(s) = K_{r_c}
+$$
+
+and for the PI-controller:
+
+$$
+G_r(s) = K_{r_c}\left(1+\frac{1}{\tau_{ic}s}\right)
+$$
+
+#### P-Controller: Evaluation Model
+
+In Figure \ref{fig:bodeplot_P-reg_eval_open}, the Bode diagram of the open-loop transfer function with the P-controller for the evaluation model is shown for different values of the gain $K_{r_c}$. A higher controller gain shifts the magnitude plot upwards. The black line on the magnitude plot represents the gain margins. The phase plot is the same for every gain, lagging and approaching $-270^\circ$ at high frequencies. The black lines on the phase plot represent the phase margins. 
+
+In Table \ref{tab:Amp_en_fasemarges}, the values of the amplitude and phase margins for the different $K_{r_c}$ values are presented. As the gain of the P-controller increases, these margins decrease, indicating that the closed-loop system becomes less immune or robust to unmodeled dynamic phenomena. At a gain of 400,000, the phase margin even becomes negative, indicating that the closed-loop system is no longer stable.
+
+![P-regelaar_evaluatiemodel_Go](https://github.com/user-attachments/assets/ef034a88-3a47-4bda-93b7-2252c55a613a)
+*Figure 1: Bode diagram of the open-loop transfer function with P-controller for the evaluation model*
+
+| $K_{r_c}$ | Gain Margin (dB) | Phase Margin (°) |
+|-----------|------------------|------------------|
+| 10000     | 27.96            | 62.36            |
+| 20000     | 13.98            | 42.62            |
+| 30000     | 9.32             | 33.47            |
+| 50000     | 5.59             | 23.83            |
+| 100000    | 2.80             | 13.13            |
+| 400000    | 0.70             | -4.28            |
+
+*Table 1: Amplitude and phase margins corresponding to the Bode diagram of the open-loop transfer function with P-controller for the evaluation model*
+
+
+
+#### P-Controller: Design Model
+
+For the design model, the transfer function $G_r(s)$ looks different and is second-order instead of third-order. This is because the dynamics of the electric coil are neglected. Figure \ref{fig:bodeplot_P-reg_ontw_open} shows the Bode diagrams of the open-loop transfer function with the P-controller, but now for the design model. The phase plot shows that the system is again lagging, but now approaches $-180^\circ$ at high frequencies. However, this value is never exactly reached, resulting in infinitely large gain margins. This can be seen in Table \ref{tab:Amp_en_fasemarges2}, which shows the amplitude and phase margins for the design model.
+
+Additionally, it is noticeable that for a gain of 400,000, the phase margin is no longer negative, meaning that the system remains stable and insensitive to unmodeled dynamic phenomena.
+
+![P-regelaar_ontwerpmodel_Go](https://github.com/user-attachments/assets/ff8f8cca-8562-4083-b6f7-346221f617a0)
+*Figure 2: Bode diagram of the open-loop transfer function with P-controller for the design model*
+
+| $K_{r_c}$ | Gain Margin (dB) | Phase Margin (°) |
+|-----------|------------------|------------------|
+| 10000     | $\infty$         | 64.27            |
+| 20000     | $\infty$         | 45.65            |
+| 30000     | $\infty$         | 37.33            |
+| 50000     | $\infty$         | 28.95            |
+| 100000    | $\infty$         | 20.48            |
+| 400000    | $\infty$         | 10.25            |
+
+*Table 2: Amplitude and phase margins corresponding to the Bode diagram of the open-loop transfer function with P-controller for the design model*
+
+
+
+
+PI-regelaar evaluatiemodel
+
+![PI_regelaar_evaluatiemodel_Go](https://github.com/user-attachments/assets/2eb794d4-bf5a-4001-b9cc-60a18816001c)
+
+
+
+
+
+
+
+PI-regelaar ontwerpmodel
+
+![PI-regelaar_ontwerpmodel_Go](https://github.com/user-attachments/assets/de9f1f48-8065-4ea9-82c9-6f3c10b147b2)
+
+
+
 
 
