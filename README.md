@@ -344,33 +344,29 @@ $$
 Thus, the state-space equation for the design model with a P-controller is:
 
 $$
+\[
 \begin{bmatrix}
-\dot{x_1} \\
-\dot{x_2}
-\end{bmatrix}
-=
+\dot{x_1}\\
+\dot{x_2}\\
+\end{bmatrix}=
 \begin{bmatrix}
-0 & 1 \\
--\left(\frac{k}{m} + \frac{K_c K_e}{mL}\right) & -\frac{c}{m}
+0 & 1\\
+-(\frac{k}{m}+\frac{K_{rc}K_c}{mR}) & -(\frac{c}{m}+\frac{K_cK_e}{mR})\\
 \end{bmatrix}
 \begin{bmatrix}
-x_1 \\
-x_2
-\end{bmatrix}
-+
+x_1\\
+x_2\\
+\end{bmatrix}+
 \begin{bmatrix}
-0 \\
--\frac{K_c^2}{mL}
+0 & 0\\
+\frac{K_cK_{rc}}{mR} & \frac{K_c}{mR}\\
 \end{bmatrix}
-r_v
-+
 \begin{bmatrix}
-0 \\
-\frac{K_c}{mR}
+x_r\\
+v_{ruis}\\
 \end{bmatrix}
-v_{ruis}
+\]
 $$
-
 
 
 
