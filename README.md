@@ -960,21 +960,143 @@ Additionally, it is noticeable that for a gain of 400,000, the phase margin is n
 
 
 
-PI-regelaar evaluatiemodel
+#### PI-Controller: Evaluation Model
+
+Figure \ref{fig:bodeplot_PI-reg_eval_open} shows the Bode diagrams of the open-loop transfer function with the PI-controller for the evaluation model, for different values of the gain $K_{r_c}$. Once again, the black line in the magnitude plot represents the gain margins, and the black lines in the phase plot represent the phase margins.
+
+The integrating action (I-action) of the PI-controller is visible in the magnitude plot at lower frequencies, where the magnitude line drops by 20 dB per decade, and in the phase plot at lower frequencies, where there is a phase lag of $-90^\circ$. At higher frequencies, the PI-controller behaves more like a P-controller as the P-action dominates.
+
+Table \ref{tab:Amp_en_fasemarges3} shows the amplitude and phase margins corresponding to the Bode diagram of the open-loop transfer function with the PI-controller for the evaluation model. It can be observed that, once again, as the gain $K_{r_c}$ increases, the margins decrease, making the system with a PI-controller less robust or immune to unmodeled dynamic phenomena. The closed-loop system will become unstable at a gain of 400,000 V/m as the phase margin becomes negative. Compared to the evaluation model with the P-controller, these margins are smaller, indicating that a lower gain $K_{r_c}$ is preferable to maintain robustness.
 
 ![PI_regelaar_evaluatiemodel_Go](https://github.com/user-attachments/assets/2eb794d4-bf5a-4001-b9cc-60a18816001c)
+*Figure 3: Bode diagram of the open-loop transfer function with PI-controller for the evaluation model*
+
+| $K_{r_c}$ | Gain Margin (dB) | Phase Margin (°) |
+|-----------|------------------|------------------|
+| 10000     | 18.90            | 37.01            |
+| 20000     | 9.45             | 26.43            |
+| 30000     | 6.30             | 20.74            |
+| 50000     | 3.78             | 14.26            |
+| 100000    | 1.89             | 6.51             |
+| 400000    | 0.47             | -7.57            |
+
+*Table 3: Amplitude and phase margins corresponding to the Bode diagram of the open-loop transfer function with PI-controller for the evaluation model*
 
 
 
+#### PI-Controller: Design Model
 
+The Bode diagrams of the open-loop transfer function with the PI-controller for the design model are shown in Figure \ref{fig:bodeplot_PI-reg_ontw_open}. Similar to the previous case, the system is again lagging, but this time it approaches $-180^\circ$ at higher frequencies. In these Bode diagrams, the I-action can be seen at lower frequencies, and the P-action at higher frequencies.
 
-
-
-PI-regelaar ontwerpmodel
+As with the design model for the P-controller, the $-180^\circ$ phase is never exactly reached, resulting in infinitely large gain margins. This can be seen in Table \ref{tab:Amp_en_fasemarges4}, which displays the amplitude and phase margins corresponding to Figure \ref{fig:bodeplot_PI-reg_ontw_open}. It is also evident that for a gain of 400,000, the phase margin remains positive, meaning the system remains stable.
 
 ![PI-regelaar_ontwerpmodel_Go](https://github.com/user-attachments/assets/de9f1f48-8065-4ea9-82c9-6f3c10b147b2)
+*Figure 4: Bode diagram of the open-loop transfer function with PI-controller for the design model*
+
+| $K_{r_c}$ | Gain Margin (dB) | Phase Margin (°) |
+|-----------|------------------|------------------|
+| 10000     | $\infty$         | 39.05            |
+| 20000     | $\infty$         | 29.54            |
+| 30000     | $\infty$         | 24.66            |
+| 50000     | $\infty$         | 19.44            |
+| 100000    | $\infty$         | 13.92            |
+| 400000    | $\infty$         | 7.03             |
+
+*Table 4: Amplitude and phase margins corresponding to the Bode diagram of the open-loop transfer function with PI-controller for the design model*
+
+
+### Magnitude Plot of the Closed-Loop Transfer Function
+
+The magnitude plot of the closed-loop transfer function was calculated using MATLAB for both the evaluation model and the design model for both the P- and PI-controllers. This was done for all gain values of both controllers, with the same time constant. The result is shown in Figures \ref{fig:bodeplot_P-reg_eval_gesloten}–\ref{fig:bodeplot_PI-reg_ontw_geslotenn}.
+
+The closed-loop transfer function $G_t(s)$ is defined as:
+
+$$
+G_t(s) = \frac{G_o(s)}{1 + G_o(s)}
+$$
+
+where $G_o(s)$ is the open-loop transfer function or loop gain.
+
+The four plots below show a similar trend. For the P-controller at low frequencies, the lines approach 0 dB, where $\lvert G_o(j\omega) \rvert = 1$. This shows that the reference signal is closely followed at low frequencies. For the PI-controller, the magnitude lines coincide with 0 dB, meaning that the reference signal is reached exactly, while a P-controller always has a tracking error.
+
+Afterward, the magnitude increases in all plots near the system's natural frequency. The peak shifts to the right for higher gains. Noise is amplified around this frequency, which can lead to instability, meaning excessively high gains are not good for the system.
+
+At high frequencies, the magnitude drops for both the P- and PI-controllers. This is a desired effect, as it effectively filters out sensor noise and unmodeled high-frequency dynamic phenomena.
+
+#### P-Controller: Evaluation Model
+
+![P-regelaar_evaluatiemodel_Gt](https://github.com/user-attachments/assets/54de635d-bfe5-4a9e-92c7-f4ee58a5754d)
+*Figure 5: Magnitude plot of the closed-loop transfer function with P-controller for the evaluation model*
+
+#### P-Controller: Design Model
+
+![P-regelaar_ontwerpmodel_Gt](https://github.com/user-attachments/assets/3d6cb48c-2412-44b0-8e8b-bf3fa320ebbe)
+*Figure 6: Magnitude plot of the closed-loop transfer function with P-controller for the design model*
+
+#### PI-Controller: Evaluation Model
+
+![PI_regelaar_evaluatiemodel_Gt](https://github.com/user-attachments/assets/91eaa7a2-3f37-40b2-94c3-9163c015a544)
+*Figure 7: Magnitude plot of the closed-loop transfer function with PI-controller for the evaluation model*
+
+#### PI-Controller: Design Model
+
+![PI-regelaar_ontwerpmodel_Gt](https://github.com/user-attachments/assets/5a3b405c-7103-4f70-987f-70f278b277dd)
+*Figure 8: Magnitude plot of the closed-loop transfer function with PI-controller for the design model*
 
 
 
+### Magnitude Plot of the Sensitivity Function
+
+The sensitivity function $S(s)$ is the transfer function from the measurement noise/sensor noise $v$ to the measured signal $y$. Consider a simple system with two input signals: a reference signal $r$ and all process variations at the end of the system $v$. This system can be represented by:
+
+$$
+y = \frac{G_{cp} G_r}{1 + G_{cp} G_r} r + \frac{1}{1 + G_{cp} G_r} v
+$$
+
+with the sensitivity:
+
+$$
+S(s) = \frac{1}{1 + G_{cp} G_r}
+$$
+
+If $S(s) \approx 0$, then the effect of the measurement noise on the measured signal $y$ will be small. Sensitivity can also be described by the nominal sensitivity peak $M_s$, which is defined as:
+
+$$
+M_s = \underset{0 < \omega < \infty}{\text{max}} \left|\frac{1}{1 + G_{cp}(j\omega) G_r(j\omega)}\right|
+$$
+
+This formula minimizes the distance between the Nyquist plot and the unstable $-1$ point. A higher sensitivity means the system is more sensitive to process variations, implying that the Nyquist plot has points close to the $-1$ point, making the system more prone to instability. A nominal sensitivity peak between 1.3 and 2 is considered normal, while values above this range are considered high.
+
+#### P-Controller: Evaluation Model
+
+When the gain is reduced, the maximum sensitivity decreases, meaning the closed-loop transfer function becomes less sensitive to process variations for frequencies above the breakpoint frequency. For $K_{rc}=400000$, the nominal sensitivity peak is 22 dB or a magnitude of 12.5, which is very high. This conclusion could already be drawn from Table 2, where a phase margin of -4.28 is reached. For a gain of $K_{rc}=100000$, a nominal sensitivity peak of 3.5 is reached, which is still high but better than $K_{rc}=400000$. This decreasing trend continues as $K_{rc}$ decreases.
+
+As the gain increases, the plots shift to the right, meaning the system becomes less sensitive to process variations at frequencies lower than the breakpoint frequency.
+
+In conclusion, at low frequencies, increasing $K_{rc}$ is beneficial as it makes the closed-loop transfer function less sensitive to noise. However, the advantages at low frequencies are offset by disadvantages at higher frequencies near $M_s$, where the system becomes more prone to instability. At even higher frequencies beyond $M_s$, all plots converge to 0 dB, where $|S| = \left|\frac{1}{1+G_{cp} G_r}\right| = 1$, meaning the system is no more or less sensitive to process variations.
+
+![P-regelaar_evaluatiemodel_S_nieuw](https://github.com/user-attachments/assets/d9a858b0-8b97-47ef-afd6-2bcad7d70a8d)
+*Figure 1: Magnitude plot of the sensitivity function with P-controller for the evaluation model*
+
+#### P-Controller: Design Model
+
+The design model for the P-controller shows the same trends as the evaluation model. However, the maximum peak height is lower for each gain, meaning that by neglecting the dynamics of the electric coil, more stable behavior can be achieved near the $M_s$ frequencies for each gain.
+
+![P-regelaar_ontwerpmodel_S_nieuw](https://github.com/user-attachments/assets/f62f5d2d-c27e-49c8-bfa5-b3c49dad2bfa)
+*Figure 2: Magnitude plot of the sensitivity function with P-controller for the design model*
+
+#### PI-Controller: Evaluation Model
+
+For the PI-controller, the sensitivity continues to decrease at lower frequencies, meaning that the PI-controller is better at suppressing process noise than the P-controller, thereby better tracking the reference signal. Interestingly, for $K_{rc}=400000$, the $M_s$ is slightly lower than for $K_{rc}=100000$, meaning that for frequencies near $M_s$, the system with higher $K_{rc}$ is slightly more stable than with a lower $K_{rc}$ value.
+
+![PI-regelaar_evaluatiemodel_S_nieuw](https://github.com/user-attachments/assets/381a08b2-5f5c-45ca-9528-f4ad038649ed)
+*Figure 3: Magnitude plot of the sensitivity function with PI-controller for the evaluation model*
+
+#### PI-Controller: Design Model
+
+The same decreasing trend at lower frequencies can be observed for the design model.
+
+![PI-regelaar_ontwerpmodel_S_nieuw](https://github.com/user-attachments/assets/6fa20ae7-b6b3-402a-a060-3232867374fd)
+*Figure 4: Magnitude plot of the sensitivity function with PI-controller for the design model*
 
 
