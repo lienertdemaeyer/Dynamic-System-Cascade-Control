@@ -664,3 +664,77 @@ The final pole-zero plot for Transfer Function 1 is shown below:
 
 
 
+
+### Transfer Function 2
+
+The transfer function is given as:
+
+$$
+KG(s) = \frac{K}{s+4}
+$$
+
+#### Key Steps:
+1. **Characteristic Equation**: Rewrite the characteristic equation as:
+   $1 + KG(s) = 1 + \frac{K}{s+4} = 0$
+
+2. **Factorization**: The numerator $T(s)$ and denominator $N(s)$ of $G(s)$ are already factored.
+
+3. **Poles and Zeros**: 
+   - There is no zero.
+   - One pole: $p_1 = -4$
+
+   ![pn2](https://github.com/user-attachments/assets/6d979c16-24cb-4eee-9195-cee220a299a5)
+
+4. **Branches of the Pole-Zero Plot**: 
+   - There is one branch, which tends asymptotically to infinity. There is no finite endpoint, and one endpoint goes to infinity.
+
+5. **Segments on the Real Axis**: 
+   - All points to the left of $p_1 = -4$ belong to the pole-zero plot because there is one pole to the right, satisfying the angle criterion for $s \in [-\infty, -4]$.
+
+6. **Symmetry**: 
+   - The pole-zero plot is symmetric about the real axis.
+
+7. **Departure and Arrival Angles**: 
+   - There is only one departure angle for pole $p_1 = -4$: $\vartheta_{p_1} = 180^\circ$
+   - There is no arrival angle, as there is no zero.
+
+8. **Asymptotes**: 
+   - The intercept $\sigma_c$ is given by:
+     $
+     \sigma_c = -\frac{\sum z_i - \sum p_j}{n-m} = -4
+     $
+   - The asymptote angle is:
+     - $k=0$: $\theta_0 = 180^\circ$
+
+9. **Multiple Roots**: 
+   - The condition $N(\hat{s})T'(\hat{s}) - N'(\hat{s})T(\hat{s}) = 0$ does not hold, so there are no multiple roots.
+
+10. **Imaginary Axis Intersection**: 
+   - Using the Routh-Hurwitz criterion, it is determined that the pole-zero plot does not intersect the imaginary axis, as $K > 0$ leads to no non-negative poles.
+
+   ![pb2](https://github.com/user-attachments/assets/38789d1e-9e14-4ecb-840c-5acb8427f9ea)
+
+The final pole-zero plot for Transfer Function 2 is shown above.
+
+
+
+
+
+
+![pn3](https://github.com/user-attachments/assets/ade63357-517b-4379-a072-e7d9a3807a1d)
+
+![pb3](https://github.com/user-attachments/assets/f2fac7db-b168-4523-aab3-7ed7d80ad97a)
+
+
+
+
+
+
+![pb4](https://github.com/user-attachments/assets/e3d9cb79-31f7-4fa4-a5c4-80fccf842b33)
+
+
+![pn4](https://github.com/user-attachments/assets/7ea7cf5f-27c9-4904-8fe8-12d66dd7f7d6)
+
+
+
+
