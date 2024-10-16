@@ -39,8 +39,8 @@ In the design model, it is assumed that the dynamics of the electrical coil can 
 $$\frac{X(s)}{V(s)} = \frac{\frac{K_c}{Rk}}{b_0s^2 + b_1s + 1}$$
 
 where:
-- \(b_0 = \frac{m}{k}\)
-- \(b_1 = \frac{c}{k} + \frac{K_cK_e}{Rk}\)
+- $b_0 = \frac{m}{k}$
+- $b_1 = \frac{c}{k} + \frac{K_cK_e}{Rk}$
 
 ## Simulation of the Dynamic Behavior
 
