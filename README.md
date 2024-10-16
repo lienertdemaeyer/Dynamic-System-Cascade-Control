@@ -165,9 +165,9 @@ Simulations were carried out for different values of $K_e$ and $c$. Key observat
 
 ## Simulating Flow Rate and Valve Position with Position Control
 
-#### P-Controller
+### P-Controller
 
-##### P-Controller Evaluation Model
+#### P-Controller Evaluation Model
 For the P-controller, the input voltage is given by:
 
 $$
@@ -180,24 +180,24 @@ $$
 \begin{bmatrix}
 \dot{x_1}\\
 \dot{x_2}\\
-\dot{x_3}\\
+\dot{x_3}
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 & 1 & 0\\
--\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m}\\
-0 & -\frac{K_e}{L} & -\frac{R}{L}\\
+0 & 1 & 0 \\
+-\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m} \\
+0 & -\frac{K_e}{L} & -\frac{R}{L}
 \end{bmatrix}
 \begin{bmatrix}
 x_1\\
 x_2\\
-x_3\\
+x_3
 \end{bmatrix}
 +
 \begin{bmatrix}
 0 \\
 0 \\
-\frac{K_{rc}}{L} x_r - \frac{K_{rc}}{L} x_1 + \frac{v_{ruis}}{L} \\
+\frac{K_{rc}}{L}x_r - \frac{K_{rc}}{L}x_1 + \frac{v_{ruis}}{L}
 \end{bmatrix}
 $$
 
@@ -207,32 +207,32 @@ $$
 \begin{bmatrix}
 \dot{x_1}\\
 \dot{x_2}\\
-\dot{x_3}\\
+\dot{x_3}
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 & 1 & 0\\
--\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m}\\
--\frac{K_{rc}}{L} & -\frac{K_e}{L} & -\frac{R}{L}\\
+0 & 1 & 0 \\
+-\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m} \\
+-\frac{K_{rc}}{L} & -\frac{K_e}{L} & -\frac{R}{L}
 \end{bmatrix}
 \begin{bmatrix}
 x_1\\
 x_2\\
-x_3\\
+x_3
 \end{bmatrix}
 +
 \begin{bmatrix}
 0 & 0 \\
 0 & 0 \\
-\frac{K_{rc}}{L} & \frac{1}{L} \\
+\frac{K_{rc}}{L} & \frac{1}{L}
 \end{bmatrix}
 \begin{bmatrix}
-x_r\\
-v_{ruis}\\
+x_r \\
+v_{ruis}
 \end{bmatrix}
 $$
 
-##### P-Controller Design Model
+#### P-Controller Design Model
 For the design model, we assume $\dot{x_3} = 0$. Solving for $x_3$:
 
 $$
@@ -250,25 +250,25 @@ Thus, the state-space equation for the P-controller design model becomes:
 $$
 \begin{bmatrix}
 \dot{x_1}\\
-\dot{x_2}\\
+\dot{x_2}
 \end{bmatrix}
 =
 \begin{bmatrix}
 0 & 1 \\
--\left(\frac{k}{m} + \frac{K_{rc} K_c}{mR}\right) & -\left(\frac{c}{m} + \frac{K_c K_e}{mR}\right) \\
+-\left( \frac{k}{m} + \frac{K_{rc} K_c}{mR} \right) & -\left( \frac{c}{m} + \frac{K_c K_e}{mR} \right)
 \end{bmatrix}
 \begin{bmatrix}
 x_1\\
-x_2\\
+x_2
 \end{bmatrix}
 +
 \begin{bmatrix}
 0 & 0 \\
-\frac{K_c K_{rc}}{mR} & \frac{K_c}{mR} \\
+\frac{K_c K_{rc}}{mR} & \frac{K_c}{mR}
 \end{bmatrix}
 \begin{bmatrix}
 x_r \\
-v_{ruis} \\
+v_{ruis}
 \end{bmatrix}
 
 ## Figures
