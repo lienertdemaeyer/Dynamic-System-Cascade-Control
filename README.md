@@ -84,29 +84,26 @@ $$
 \begin{bmatrix}
 \dot{x_1} \\
 \dot{x_2} \\
-\dot{x_3} \\
-\end{bmatrix}
-=
+\dot{x_3}
+\end{bmatrix} =
 \begin{bmatrix}
 0 & 1 & 0 \\
 -\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m} \\
-0 & -\frac{K_e}{L} & -\frac{R}{L} \\
+0 & -\frac{K_e}{L} & -\frac{R}{L}
 \end{bmatrix}
 \begin{bmatrix}
 x_1 \\
 x_2 \\
-x_3 \\
+x_3
 \end{bmatrix}
 +
 \begin{bmatrix}
 0 \\
 0 \\
-\frac{1}{L} \\
+\frac{1}{L}
 \end{bmatrix}
 v
 $$
-
-#### Output Equation:
 
 $$
 y =
