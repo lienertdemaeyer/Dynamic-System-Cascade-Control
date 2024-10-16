@@ -188,26 +188,19 @@ The state-space representation is:
 
 $$
 \begin{bmatrix}
-\dot{x}_1 \\
-\dot{x}_2 \\
-\dot{x}_3
-\end{bmatrix}
-=
+\dot{x}_1 \\ \dot{x}_2 \\ \dot{x}_3
+\end{bmatrix} =
 \begin{bmatrix}
 0 & 1 & 0 \\
--\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m} \\
-0 & -\frac{K_e}{L} & -\frac{R}{L}
+-\dfrac{k}{m} & -\dfrac{c}{m} & \dfrac{K_c}{m} \\
+0 & -\dfrac{K_e}{L} & -\dfrac{R}{L}
 \end{bmatrix}
 \begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3
+x_1 \\ x_2 \\ x_3
 \end{bmatrix}
 +
 \begin{bmatrix}
-0 \\
-0 \\
-\frac{1}{L}
+0 \\ 0 \\ \dfrac{1}{L}
 \end{bmatrix} v
 $$
 
