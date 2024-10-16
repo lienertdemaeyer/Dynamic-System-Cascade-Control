@@ -163,46 +163,87 @@ Simulations were carried out for different values of $K_e$ and $c$. Key observat
 
 
 
-## Simulation of Solenoid Valve Dynamics
+## Simulation of the Dynamic Behavior of the Solenoid Valve
 
-We define the states as follows:
+### State Equations of the Solenoid Valve
 
-$$
-\begin{aligned}
-    x_1 &= x \\
-    x_2 &= \dot{x} \\
-    x_3 &= i
-\end{aligned}
-$$
+The states are chosen as:
 
-The state equations for the mechanical spool and the electric coil are:
+\[
+\left\{
+    \begin{array}{ll}
+        x_1 = x \\
+        x_2 = \dot{x} \\
+        x_3 = i \\
+    \end{array}
+\right.
+\]
 
-$$
-\begin{aligned}
-    \dot{x}_2 &= -\frac{k}{m}x_1 - \frac{c}{m}x_2 + \frac{K_c}{m}x_3 \\
-    \dot{x}_3 &= -\frac{K_e}{L}x_2 - \frac{R}{L}x_3 + \frac{v}{L}
-\end{aligned}
-$$
+The system equations for the mechanical and electrical coils are solved for \(\dot{x_2}\) and \(\dot{x_3}\), respectively.
 
-The state-space representation is:
+#### Mechanical Coil:
+\[
+m\ddot{x} + c\dot{x} + kx = K_c i
+\]
 
-$$
+This leads to the following state equation:
+\[
+\dot{x_2} = -\frac{k}{m}x_1 - \frac{c}{m}x_2 + \frac{K_c}{m}x_3
+\]
+
+#### Electrical Coil:
+\[
+v - v_b = L\frac{di}{dt} + Ri
+\]
+
+With \(v_b = K_e\dot{x}\), the state equation becomes:
+\[
+\dot{x_3} = -\frac{K_e}{L}x_2 - \frac{R}{L}x_3 + \frac{v}{L}
+\]
+
+#### State-Space Representation:
+\[
 \begin{bmatrix}
-\dot{x}_1 \\ \dot{x}_2 \\ \dot{x}_3
-\end{bmatrix} =
+\dot{x_1}\\
+\dot{x_2}\\
+\dot{x_3}
+\end{bmatrix}
+=
 \begin{bmatrix}
-0 & 1 & 0 \\
--\dfrac{k}{m} & -\dfrac{c}{m} & \dfrac{K_c}{m} \\
-0 & -\dfrac{K_e}{L} & -\dfrac{R}{L}
+0 & 1 & 0\\
+-\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m}\\
+0 & -\frac{K_e}{L} & -\frac{R}{L}
 \end{bmatrix}
 \begin{bmatrix}
-x_1 \\ x_2 \\ x_3
+x_1\\
+x_2\\
+x_3
 \end{bmatrix}
 +
 \begin{bmatrix}
-0 \\ 0 \\ \dfrac{1}{L}
-\end{bmatrix} v
-$$
+0\\
+0\\
+\frac{1}{L}
+\end{bmatrix}v
+\]
+
+The output equation is:
+
+\[
+y =
+\begin{bmatrix}
+1 & 0 & 0\\
+\alpha & 0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3
+\end{bmatrix}
+\]
+
+with \(\alpha = C_d \pi d_{a1} \sqrt{P_s\frac{2}{\rho}}x\).
+
 
 
 
