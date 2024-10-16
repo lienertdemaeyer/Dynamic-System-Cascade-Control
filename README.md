@@ -620,15 +620,15 @@ $$
 #### Key Steps:
 1. **Characteristic Equation**: Rewrite the characteristic equation as:
 2. 
-   $$
+   $
    1 + KG(s) = 1 + \frac{K(s+1)}{s^4+4s^3+6s^2+4s} = 0
-   $$
+   $
 
 3. **Factorization**: Factor the numerator and denominator:
 4. 
-   $$
+   $
    1 + KG(s) = 1 + \frac{K(s+1)}{s(s+2)(s+1 \pm j)}
-   $$
+   $
 
 5. **Poles and Zeros**: 
    - Zero: $z_1 = -1$
@@ -654,9 +654,9 @@ $$
 
 10. **Asymptotes**: 
    - The intercept $\sigma_c$ is given by:
-     $$
+     $
      \sigma_c = -\frac{\sum z_i - \sum p_j}{n-m} = -1
-     $$
+     $
    - The asymptote angles are:
      - $k=0$: $\vartheta_0 = 60^\circ$
      - $k=1$: $\vartheta_1 = 180^\circ$
