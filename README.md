@@ -550,8 +550,9 @@ The plot below shows the valve position [m] over time [s] with different $\tau_{
 
 
 
-###{Poles}
+### Poles
 
+$$
 \begin{table}[H]
     \caption{Polen zonder regelaar voor Evaluatiemodel en het ontwerpmodel}
     \bigskip
@@ -568,7 +569,9 @@ The plot below shows the valve position [m] over time [s] with different $\tau_{
     \hline
     \end{tabular}
 \end{table}
+$$
 
+$$
 \begin{table}[H]
     \caption{Polen van P-regelaar voor evaluatiemodel en het ontwerpmodel}
     \bigskip
@@ -591,7 +594,9 @@ The plot below shows the valve position [m] over time [s] with different $\tau_{
     \hline
     \end{tabular}
 \end{table}
+$$
 
+$$
 \begin{table}[H]
     \caption{Polen van PI-regelaar voor evaluatiemodel en het ontwerpmodel}
     \bigskip
@@ -609,5 +614,5 @@ The plot below shows the valve position [m] over time [s] with different $\tau_{
     20000 & 2 & -66,9149;-1,2300+3,8331i;-1,2300-3,8331i;-0,4918 & -0,4918;-1,3541+3,7993i;-1,3541-3,7993i \\
     \end{tabular}
 \end{table}
-
+$$
 
