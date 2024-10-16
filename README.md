@@ -721,19 +721,116 @@ The final pole-zero plot for Transfer Function 2 is shown above.
 
 
 
-![pn3](https://github.com/user-attachments/assets/ade63357-517b-4379-a072-e7d9a3807a1d)
+### Transfer Function 3
 
-![pb3](https://github.com/user-attachments/assets/f2fac7db-b168-4523-aab3-7ed7d80ad97a)
+The transfer function is given as:
+
+$$
+KG(s) = \frac{K}{s(s+10)(s+30)}
+$$
+
+#### Key Steps:
+1. **Characteristic Equation**: Rewrite the characteristic equation as:
+   $1 + KG(s) = 1 + \frac{K}{s(s+10)(s+30)} = 0$
+
+2. **Factorization**: The numerator $T(s)$ and denominator $N(s)$ of $G(s)$ are already factored.
+
+3. **Poles and Zeros**: 
+   - There are no zeros.
+   - Poles: $p_1 = 0$, $p_2 = -10$, $p_3 = -30$
+
+   ![pn3](https://github.com/user-attachments/assets/ade63357-517b-4379-a072-e7d9a3807a1d)
+
+4. **Branches of the Pole-Zero Plot**: 
+   - There are three branches, all tending to infinity. There are no finite endpoints, and all three branches go to infinity.
+
+5. **Segments on the Real Axis**: 
+   - Points on the real axis in the intervals $[-\infty, -30]$ and $[-10, 0]$ belong to the pole-zero plot as they satisfy the angle criterion.
+
+6. **Symmetry**: 
+   - The pole-zero plot is symmetric about the real axis.
+
+7. **Departure Angles**: 
+   - The departure angles for the poles are:
+     - For pole $p_1 = 0$: $\vartheta_{p_1} = 180^\circ$
+     - For pole $p_2 = -10$: $\vartheta_{p_2} = 0^\circ$
+     - For pole $p_3 = -30$: $\vartheta_{p_3} = 180^\circ$
+
+8. **Asymptotes**: 
+   - The intercept $\sigma_c$ is given by:
+     $
+     \sigma_c = -\frac{\sum z_i - \sum p_j}{n-m} = \frac{-40}{3}
+     $
+   - The asymptote angles are:
+     - $k=0$: $\vartheta_0 = 60^\circ$
+     - $k=1$: $\vartheta_1 = 180^\circ$
+     - $k=2$: $\vartheta_2 = 300^\circ$
+
+9. **Multiple Roots**: 
+   - Solving $N(\hat{s})T'(\hat{s}) - N'(\hat{s})T(\hat{s}) = 0$ results in two candidate points for multiple roots: $s_1 = -22.1515$ and $s_2 = -4.5125$. Since only $s_2$ lies on the pole-zero plot, it is identified as a multiple root.
+
+10. **Imaginary Axis Intersection**: 
+   - Using the Routh-Hurwitz criterion, the pole-zero plot intersects the imaginary axis at $s = 10\sqrt{3}j$ and $s = -10\sqrt{3}j$.
+
+   ![pb3](https://github.com/user-attachments/assets/f2fac7db-b168-4523-aab3-7ed7d80ad97a)
+
+The final pole-zero plot for Transfer Function 3 is shown above.
 
 
 
 
+### Transfer Function 4
 
+The transfer function is given as:
 
-![pb4](https://github.com/user-attachments/assets/e3d9cb79-31f7-4fa4-a5c4-80fccf842b33)
+$$
+KG(s) = \frac{K(s+3)}{(s+1)(s+2)}
+$$
 
+#### Key Steps:
+1. **Characteristic Equation**: Rewrite the characteristic equation as:
+   $1 + KG(s) = 1 + \frac{K(s+3)}{(s+1)(s+2)} = 0$
 
-![pn4](https://github.com/user-attachments/assets/7ea7cf5f-27c9-4904-8fe8-12d66dd7f7d6)
+2. **Factorization**: The numerator $T(s)$ and denominator $N(s)$ of $G(s)$ are already factored.
+
+3. **Poles and Zeros**: 
+   - One zero: $z_1 = -3$
+   - Two poles: $p_1 = -1$, $p_2 = -2$
+
+   ![pn4](https://github.com/user-attachments/assets/7ea7cf5f-27c9-4904-8fe8-12d66dd7f7d6)
+
+4. **Branches of the Pole-Zero Plot**: 
+   - There are three branches: one ends at the finite zero $z_1 = -3$, while the other two tend to infinity. There is one finite endpoint and two endpoints at infinity.
+
+5. **Segments on the Real Axis**: 
+   - Points on the real axis in the intervals $[-\infty, -3]$ and $[-2, -1]$ belong to the pole-zero plot as they satisfy the angle criterion.
+
+6. **Symmetry**: 
+   - The pole-zero plot is symmetric about the real axis.
+
+7. **Departure and Arrival Angles**: 
+   - Departure angle for pole $p_1 = -1$: $\vartheta_{p_1} = 180^\circ$
+   - Departure angle for pole $p_2 = -2$: $\vartheta_{p_2} = 180^\circ$
+   - Arrival angle at zero $z_1 = -3$: $\vartheta_{z_1} = 0^\circ$
+
+8. **Asymptotes**: 
+   - The intercept $\sigma_c$ is given by:
+     $
+     \sigma_c = -\frac{\sum z_i - \sum p_j}{n-m} = 0
+     $
+   - The asymptote angle is:
+     - $k=0$: $\vartheta_0 = 180^\circ$
+
+9. **Multiple Roots**: 
+   - Solving $N(\hat{s})T'(\hat{s}) - N'(\hat{s})T(\hat{s}) = 0$ results in two candidate points for multiple roots: $s_1 = -1.568$ and $s_2 = -4.414$. Since both lie on the pole-zero plot, both are identified as multiple roots.
+
+10. **Imaginary Axis Intersection**: 
+   - Using the Routh-Hurwitz criterion, it is determined that there are no intersections with the imaginary axis, as the roots are real.
+
+   ![pb4](https://github.com/user-attachments/assets/e3d9cb79-31f7-4fa4-a5c4-80fccf842b33)
+
+The final pole-zero plot for Transfer Function 4 is shown above.
+
 
 
 
