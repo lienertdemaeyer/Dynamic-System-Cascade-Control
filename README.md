@@ -476,32 +476,32 @@ $$
 The state equation becomes:
 
 $$
+\[
 \begin{bmatrix}
 \dot{x_1}\\
 \dot{x_2}\\
 \dot{x_3}\\
-\end{bmatrix}
-=
+\end{bmatrix}=
 \begin{bmatrix}
 0 & 1 & 0\\
--\frac{k}{m} & -\left(\frac{K_cK_e}{mR} + \frac{c}{m}\right) & \frac{K_c}{mR}\\
+-\frac{k}{m} & {\frac{-K{c}K{c}}{mR}} {-\frac{c}{m}} & \frac{K_{c}}{mR}\\
 -\frac{K_{rc}}{\tau_{ic}} & -K_{rc} & 0\\
 \end{bmatrix}
 \begin{bmatrix}
 x_1\\
 x_2\\
 x_3\\
-\end{bmatrix}
-+
+\end{bmatrix}+
 \begin{bmatrix}
 0 & 0\\
-0 & \frac{K_c}{mR}\\
+0 & \frac{K_{c}}{mR}\\
 \frac{K_{rc}}{\tau_{ic}} & 0\\
 \end{bmatrix}
 \begin{bmatrix}
 x_r\\
-v_{noise}\\
+v_{ruis}\\
 \end{bmatrix}
+\]
 $$
 
 
