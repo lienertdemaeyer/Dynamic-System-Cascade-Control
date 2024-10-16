@@ -27,10 +27,11 @@ F(t) = B_c l_c i = K_c i(t)
 $$
 
 where:
-- \( B_c \) is the magnetic flux density,
-- \( l_c \) is the length of the electrical conductor,
-- \( i(t) \) is the electric current,
-- \( K_c \) is the electromechanical coupling constant.
+- \(m\): Mass of the moving element
+- \(c\): Viscous damping coefficient
+- \(k\): Spring constant
+- \(K_c\): Proportional constant relating current and force
+- \(i(t)\): Electric current
 
 This force drives the motion of the mechanical spool, and the equation of motion can be written as:
 
