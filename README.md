@@ -163,120 +163,55 @@ Simulations were carried out for different values of $K_e$ and $c$. Key observat
 
 
 
-## Simulating Flow Rate and Valve Position with Position Control
+## Simulation of Solenoid Valve Dynamics
 
-### P-Controller
-
-#### P-Controller Evaluation Model
-For the P-controller, the input voltage is given by:
-
+We define the states:
 $$
-v_{in} = K_{rc}(x_r - x)
+\left\{
+    \begin{array}{ll}
+        \ x_1=x \\
+        \ x_2=\dot{x} \\
+        \ x_3=i \\
+    \end{array}
+\right.
 $$
 
-Substituting $x_1 = x$ and updating the state equation of the solenoid valve:
+Mechanical coil equation:
+$$
+\dot{x_2}=-\frac{k}{m}x_1-\frac{c}{m}x_2+\frac{K_c}{m}x_3
+$$
 
+Electrical coil equation:
+$$
+\dot{x_3}=-\frac{K_e}{L}x_2-\frac{R}{L}x_3+\frac{v}{L}
+$$
+
+State-space representation:
 $$
 \begin{bmatrix}
 \dot{x_1}\\
 \dot{x_2}\\
 \dot{x_3}
-\end{bmatrix}
-=
+\end{bmatrix}=
 \begin{bmatrix}
-0 & 1 & 0 \\
--\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m} \\
+0 & 1 & 0\\
+-\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m}\\
 0 & -\frac{K_e}{L} & -\frac{R}{L}
 \end{bmatrix}
 \begin{bmatrix}
 x_1\\
 x_2\\
 x_3
-\end{bmatrix}
-+
+\end{bmatrix}+
 \begin{bmatrix}
-0 \\
-0 \\
-\frac{K_{rc}}{L}x_r - \frac{K_{rc}}{L}x_1 + \frac{v_{ruis}}{L}
-\end{bmatrix}
+0\\
+0\\
+\frac{1}{L}
+\end{bmatrix}v
 $$
 
-This can be simplified further as:
 
-$$
-\begin{bmatrix}
-\dot{x_1}\\
-\dot{x_2}\\
-\dot{x_3}
-\end{bmatrix}
-=
-\begin{bmatrix}
-0 & 1 & 0 \\
--\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m} \\
--\frac{K_{rc}}{L} & -\frac{K_e}{L} & -\frac{R}{L}
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\
-x_2\\
-x_3
-\end{bmatrix}
-+
-\begin{bmatrix}
-0 & 0 \\
-0 & 0 \\
-\frac{K_{rc}}{L} & \frac{1}{L}
-\end{bmatrix}
-\begin{bmatrix}
-x_r \\
-v_{ruis}
-\end{bmatrix}
-$$
 
-#### P-Controller Design Model
-For the design model, we assume $\dot{x_3} = 0$. Solving for $x_3$:
 
-$$
-x_3 = -\frac{K_{rc}}{R}x_1 - \frac{K_e}{R}x_2 + \frac{K_{rc}}{R}x_r + \frac{1}{R}v_{ruis}
-$$
 
-Substituting into the equation for $\dot{x_2}$ gives:
 
-$$
-\dot{x_2} = -\left( \frac{k}{m} + \frac{K_{rc} K_c}{mR} \right) x_1 - \left( \frac{c}{m} + \frac{K_c K_e}{mR} \right) x_2 + \frac{K_c K_{rc}}{mR} x_r + \frac{K_c}{mR} v_{ruis}
-$$
-
-Thus, the state-space equation for the P-controller design model becomes:
-
-$$
-\begin{bmatrix}
-\dot{x_1}\\
-\dot{x_2}
-\end{bmatrix}
-=
-\begin{bmatrix}
-0 & 1 \\
--\left( \frac{k}{m} + \frac{K_{rc} K_c}{mR} \right) & -\left( \frac{c}{m} + \frac{K_c K_e}{mR} \right)
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\
-x_2
-\end{bmatrix}
-+
-\begin{bmatrix}
-0 & 0 \\
-\frac{K_c K_{rc}}{mR} & \frac{K_c}{mR}
-\end{bmatrix}
-\begin{bmatrix}
-x_r \\
-v_{ruis}
-\end{bmatrix}
-
-## Figures
-
-Below are placeholders for figures that illustrate key results from the project. Please replace the placeholders with the appropriate project images.
-
-- ![Figure 1: Dynamic System Setup](images/figure1_placeholder.png)
-- ![Figure 2: Transfer Function Response](images/figure2_placeholder.png)
-- ![Figure 3: State-Space Simulation](images/figure3_placeholder.png)
-- ![Figure 4: Simulation Without Control](images/figure4_placeholder.png)
-- ![Figure 5: Simulation With PI Controller](images/figure5_placeholder.png)
