@@ -449,6 +449,60 @@ v_{ruis}\\
 $$
 
 
+### **PI-controller design model**
+
+For the design model, $\dot{x_3} = \dot{i} = 0$, so:
+
+$$
+\dot{x_3} = -\frac{K_e}{L}x_2 - \frac{R}{L}x_3 + \frac{v}{L} = 0
+$$
+
+Solving for $x_3$ gives:
+
+$$
+x_3 = -\frac{K_e}{R}x_2 + \frac{v_{in} + v_{noise}}{R}
+$$
+
+Substituting into $\dot{x_2}$ and rearranging gives:
+
+$$
+\dot{x_2} = -\frac{k}{m}x_1 - \frac{c}{m}x_2 + \frac{K_c}{m} \left(-\frac{K_e}{R}x_2 + \frac{v_{in} + v_{noise}}{R}\right)
+$$
+
+$$
+\Longleftrightarrow \dot{x_2} = -\frac{k}{m}x_1 - \left(\frac{c}{m} + \frac{K_cK_e}{mR}\right)x_2 + \frac{K_c}{m}\frac{v_{in} + v_{noise}}{R}
+$$
+
+The state equation becomes:
+
+$$
+\begin{bmatrix}
+\dot{x_1}\\
+\dot{x_2}\\
+\dot{x_3}\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 1 & 0\\
+-\frac{k}{m} & -\left(\frac{K_cK_e}{mR} + \frac{c}{m}\right) & \frac{K_c}{mR}\\
+-\frac{K_{rc}}{\tau_{ic}} & -K_{rc} & 0\\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{bmatrix}
++
+\begin{bmatrix}
+0 & 0\\
+0 & \frac{K_c}{mR}\\
+\frac{K_{rc}}{\tau_{ic}} & 0\\
+\end{bmatrix}
+\begin{bmatrix}
+x_r\\
+v_{noise}\\
+\end{bmatrix}
+$$
 
 
 
