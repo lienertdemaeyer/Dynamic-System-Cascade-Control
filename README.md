@@ -313,6 +313,55 @@ v_{noise}\\
 $$
 
 
+### **P-controller design model**
+
+For the design model, $\dot{x_3} = 0$, so:
+
+$$
+0 = -\frac{K_{rc}}{L}x_1 - \frac{K_e}{L}x_2 - \frac{R}{L}x_3 +
+\frac{K_{rc}}{L}x_r + \frac{1}{L}v_{noise}
+$$
+
+Solving for $x_3$ gives:
+
+$$
+x_3 = -\frac{K_{rc}}{R}x_1 - \frac{K_e}{R}x_2 - \frac{K_{rc}}{R}x_r + \frac{1}{R}v_{noise}
+$$
+
+Substituting into $\dot{x_2}$ gives:
+
+$$
+\dot{x_2} = -\frac{k}{m}x_1 - \frac{c}{m}x_2 + \frac{K_c}{m} \left(-\frac{K_{rc}}{R}x_1 - \frac{K_e}{R}x_2 + \frac{K_{rc}}{R}x_r + \frac{1}{R}v_{noise}\right)
+$$
+
+$$
+\dot{x_2} = -\left(\frac{k}{m} + \frac{K_{rc}K_c}{mR}\right)x_1 - \left(\frac{c}{m} + \frac{K_cK_e}{mR}\right)x_2 + \frac{K_cK_{rc}}{mR}x_r + \frac{K_c}{mR}v_{noise}
+$$
+
+The state equation of the design model for the P-controller becomes:
+
+$$
+\begin{bmatrix}
+\dot{x_1}\\
+\dot{x_2}\\
+\end{bmatrix}=
+\begin{bmatrix}
+0 & 1\\
+-\left(\frac{k}{m} + \frac{K_{rc}K_c}{mR}\right) & -\left(\frac{c}{m} + \frac{K_cK_e}{mR}\right)\\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+\end{bmatrix}+
+\begin{bmatrix}
+0 & 0\\
+\frac{K_cK_{rc}}{mR} & \frac{K_c}{mR}\\
+\end{bmatrix}
+\begin{bmatrix}
+x_r\\
+v_{noise}\\
+\end{bmatrix}
+$$
 
 
 
