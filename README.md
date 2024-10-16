@@ -165,49 +165,50 @@ Simulations were carried out for different values of $K_e$ and $c$. Key observat
 
 ## Simulation of Solenoid Valve Dynamics
 
-We define the states:
+We define the states as follows:
+
 $$
-\left\{
-    \begin{array}{ll}
-        \ x_1=x \\
-        \ x_2=\dot{x} \\
-        \ x_3=i \\
-    \end{array}
-\right.
+\begin{aligned}
+    x_1 &= x \\
+    x_2 &= \dot{x} \\
+    x_3 &= i
+\end{aligned}
 $$
 
-Mechanical coil equation:
+The state equations for the mechanical spool and the electric coil are:
+
 $$
-\dot{x_2}=-\frac{k}{m}x_1-\frac{c}{m}x_2+\frac{K_c}{m}x_3
+\begin{aligned}
+    \dot{x}_2 &= -\frac{k}{m}x_1 - \frac{c}{m}x_2 + \frac{K_c}{m}x_3 \\
+    \dot{x}_3 &= -\frac{K_e}{L}x_2 - \frac{R}{L}x_3 + \frac{v}{L}
+\end{aligned}
 $$
 
-Electrical coil equation:
-$$
-\dot{x_3}=-\frac{K_e}{L}x_2-\frac{R}{L}x_3+\frac{v}{L}
-$$
+The state-space representation is:
 
-State-space representation:
 $$
 \begin{bmatrix}
-\dot{x_1}\\
-\dot{x_2}\\
-\dot{x_3}
-\end{bmatrix}=
+\dot{x}_1 \\
+\dot{x}_2 \\
+\dot{x}_3
+\end{bmatrix}
+=
 \begin{bmatrix}
-0 & 1 & 0\\
--\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m}\\
+0 & 1 & 0 \\
+-\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m} \\
 0 & -\frac{K_e}{L} & -\frac{R}{L}
 \end{bmatrix}
 \begin{bmatrix}
-x_1\\
-x_2\\
+x_1 \\
+x_2 \\
 x_3
-\end{bmatrix}+
+\end{bmatrix}
++
 \begin{bmatrix}
-0\\
-0\\
+0 \\
+0 \\
 \frac{1}{L}
-\end{bmatrix}v
+\end{bmatrix} v
 $$
 
 
