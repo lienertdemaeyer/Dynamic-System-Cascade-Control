@@ -72,74 +72,79 @@ $$
 
 ### Key Equations and Simulation Insights
 
-#### Evaluatiemodel
+### Evaluatiemodel
 The evaluatiemodel captures the full dynamics, including the electrical coil. The system is modeled as:
 
-\[
+$$
 \begin{bmatrix}
-\dot{x_1}\\
-\dot{x_2}\\
-\dot{x_3}\\
-\end{bmatrix}=
+\dot{x_1} \\
+\dot{x_2} \\
+\dot{x_3}
+\end{bmatrix} =
 \begin{bmatrix}
-0 & 1 & 0\\
--\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m}\\
-0 & -\frac{K_e}{L} & -\frac{R}{L}\\
+0 & 1 & 0 \\
+-\frac{k}{m} & -\frac{c}{m} & \frac{K_c}{m} \\
+0 & -\frac{K_e}{L} & -\frac{R}{L}
 \end{bmatrix}
 \begin{bmatrix}
-x_1\\
-x_2\\
-x_3\\
-\end{bmatrix}+
+x_1 \\
+x_2 \\
+x_3
+\end{bmatrix}
++
 \begin{bmatrix}
-0\\
-0\\
-\frac{1}{L}\\
+0 \\
+0 \\
+\frac{1}{L}
 \end{bmatrix}
 v
-\]
-With the output equation:
-\[
-y=
-\begin{bmatrix}
-1 & 0 & 0\\
-\alpha & 0 & 0\\
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\
-x_2\\
-x_3\\
-\end{bmatrix}
-\]
+$$
 
-#### Ontwerpmodel
+With the output equation:
+
+$$
+y =
+\begin{bmatrix}
+1 & 0 & 0 \\
+\alpha & 0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{bmatrix}
+$$
+
+### Ontwerpmodel
 In the ontwerpmodel, the electrical coil dynamics are neglected. We assume $\dot{i} = 0$, leading to the reduced system:
 
-\[
-\dot{x_2} = -\frac{k}{m}x_1 - \left(\frac{c}{m} + \frac{K_eK_c}{mR}\right)x_2 + \frac{K_c}{mR}v
-\]
+$$
+\dot{x_2} = -\frac{k}{m}x_1 - \left(\frac{c}{m} + \frac{K_e K_c}{mR}\right)x_2 + \frac{K_c}{mR}v
+$$
 
 This results in the state-space equation:
 
-\[
+$$
 \begin{bmatrix}
-\dot{x_1}\\
-\dot{x_2}\\
-\end{bmatrix}=
+\dot{x_1} \\
+\dot{x_2}
+\end{bmatrix} =
 \begin{bmatrix}
-0 & 1\\
--\frac{k}{m} & -\left(\frac{c}{m} + \frac{K_eK_c}{mR}\right)\\
+0 & 1 \\
+-\frac{k}{m} & -\left(\frac{c}{m} + \frac{K_e K_c}{mR}\right)
 \end{bmatrix}
 \begin{bmatrix}
-x_1\\
-x_2\\
-\end{bmatrix}+
+x_1 \\
+x_2
+\end{bmatrix}
++
 \begin{bmatrix}
-0\\
-\frac{K_c}{mR}\\
+0 \\
+\frac{K_c}{mR}
 \end{bmatrix}
 v
-\]
+$$
+
 
 #### MATLAB Simulation Results
 
@@ -151,7 +156,7 @@ Simulations were carried out for different values of $K_e$ and $c$. Key observat
 1. The **blue graph** (evaluatiemodel) and **purple dotted graph** for $c=0.4$ and $K_e=0$ exhibited the greatest damping.
 2. The **red graph** (evaluatiemodel) and **green dotted graph** for $c=0.15$ and $K_e=0$ showed the strongest overshoot.
 3. The **orange graph** (evaluatiemodel) and **cyan graph** for $c=0.15$ and $K_e=500$ showed more damping compared to the red graph, despite having the same damping coefficient, due to the increased feedback from the electromotive force ($K_e=500$).
-4. 
+
 ![Klepstand van de solenoïdeklep zonder positieregelaar](https://github.com/user-attachments/assets/836d6dfb-d5c3-4a1c-872c-e54016bd3e51)
 
 
