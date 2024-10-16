@@ -42,7 +42,7 @@ where:
 - $b_0 = \frac{m}{k}$
 - $b_1 = \frac{c}{k} + \frac{K_cK_e}{Rk}$
 
-## Simulation of the Dynamic Behavior
+## Simulating Flow Rate and Valve Position without Position Control
 
 ### State Equations
 The state-space representation of the solenoid valve system can be defined with the following state variables:
@@ -163,7 +163,7 @@ Simulations were carried out for different values of $K_e$ and $c$. Key observat
 
 
 
-### Simulating Flow Rate and Valve Position with Position Control
+## Simulating Flow Rate and Valve Position with Position Control
 
 #### P-Controller
 
