@@ -699,10 +699,7 @@ $$
    - There is no arrival angle, as there is no zero.
 
 8. **Asymptotes**: 
-   - The intercept $\sigma_c$ is given by:
-     $
-     \sigma_c = -\frac{\sum z_i - \sum p_j}{n-m} = -4
-     $
+   - The intercept $\sigma_c$ is given by:$\sigma_c = -\frac{\sum z_i - \sum p_j}{n-m} = -4$
    - The asymptote angle is:
      - $k=0$: $\theta_0 = 180^\circ$
 
@@ -814,10 +811,7 @@ $$
    - Arrival angle at zero $z_1 = -3$: $\vartheta_{z_1} = 0^\circ$
 
 8. **Asymptotes**: 
-   - The intercept $\sigma_c$ is given by:
-     $
-     \sigma_c = -\frac{\sum z_i - \sum p_j}{n-m} = 0
-     $
+   - The intercept $\sigma_c$ is given by:$\sigma_c = -\frac{\sum z_i - \sum p_j}{n-m} = 0$
    - The asymptote angle is:
      - $k=0$: $\vartheta_0 = 180^\circ$
 
