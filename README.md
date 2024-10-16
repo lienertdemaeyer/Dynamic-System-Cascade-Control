@@ -5,11 +5,43 @@
 - [Transfer Function of the Solenoid Valve](#transfer-function-of-the-solenoid-valve)
   - [Transfer Function Evaluation Model](#transfer-function-evaluation-model)
   - [Transfer Function Design Model](#transfer-function-design-model)
-- [Simulation of the Dynamic Behavior](#simulation-of-the-dynamic-behavior)
-  - [State Equations](#state-equations)
-  - [Simulation Without Position Control](#simulation-without-position-control)
-  - [Simulation With Position Control](#simulation-with-position-control)
-- [Figures](#figures)
+- [Simulation of the Dynamic Behavior of the Solenoid Valve](#simulation-of-the-dynamic-behavior-of-the-solenoid-valve)
+  - [State Equations for the Solenoid Valve](#state-equations-for-the-solenoid-valve)
+  - [Simulating Flow Rate and Valve Position without Position Control](#simulating-flow-rate-and-valve-position-without-position-control)
+  - [Simulating Flow Rate and Valve Position with Position Control](#simulating-flow-rate-and-valve-position-with-position-control)
+    - [P-Controller Evaluation Model](#p-controller-evaluation-model)
+    - [P-Controller Design Model](#p-controller-design-model)
+    - [PI-Controller Evaluation Model](#pi-controller-evaluation-model)
+    - [PI-Controller Design Model](#pi-controller-design-model)
+- [Comparison of Poles](#comparison-of-poles)
+- [Advantages of Feedback](#advantages-of-feedback)
+  - [First Advantage of Feedback](#first-advantage-of-feedback)
+  - [Second Advantage of Feedback](#second-advantage-of-feedback)
+- [Pole-Zero Analysis](#pole-zero-analysis)
+  - [Transfer Function 1](#transfer-function-1)
+  - [Transfer Function 2](#transfer-function-2)
+  - [Transfer Function 3](#transfer-function-3)
+  - [Transfer Function 4](#transfer-function-4)
+  - [Pole-Zero Plot of the Solenoid Valve](#pole-zero-plot-of-the-solenoid-valve)
+    - [Closed-Loop System with P-Controller](#closed-loop-system-with-p-controller)
+    - [Closed-Loop System with PI-Controller](#closed-loop-system-with-pi-controller)
+- [Analysis of Control Systems in the Frequency Domain](#analysis-of-control-systems-in-the-frequency-domain)
+  - [Bode Analysis of the Dynamic Behavior of the Solenoid Valve with Position Control](#bode-analysis-of-the-dynamic-behavior-of-the-solenoid-valve-with-position-control)
+    - [P-Controller: Evaluation Model](#p-controller-evaluation-model-1)
+    - [P-Controller: Design Model](#p-controller-design-model-1)
+    - [PI-Controller: Evaluation Model](#pi-controller-evaluation-model-1)
+    - [PI-Controller: Design Model](#pi-controller-design-model-1)
+  - [Magnitude Plot of the Closed-Loop Transfer Function](#magnitude-plot-of-the-closed-loop-transfer-function)
+    - [P-Controller: Evaluation Model](#p-controller-evaluation-model-2)
+    - [P-Controller: Design Model](#p-controller-design-model-2)
+    - [PI-Controller: Evaluation Model](#pi-controller-evaluation-model-2)
+    - [PI-Controller: Design Model](#pi-controller-design-model-2)
+  - [Magnitude Plot of the Sensitivity Function](#magnitude-plot-of-the-sensitivity-function)
+    - [P-Controller: Evaluation Model](#p-controller-evaluation-model-3)
+    - [P-Controller: Design Model](#p-controller-design-model-3)
+    - [PI-Controller: Evaluation Model](#pi-controller-evaluation-model-3)
+    - [PI-Controller: Design Model](#pi-controller-design-model-3)
+
 
 ## Introduction
 This project focuses on the application of a dynamic system for cascade control of the liquid level in a water tank. It includes an in-depth analysis of a solenoid valve, which can control the inflow rate of liquid into a tank. The solenoid valve is represented as a mass-spring-damper system, with a proportional relationship between electric current and magnetic force. This project also includes mathematical derivations of system transfer functions and a state-space representation.
@@ -1097,6 +1129,7 @@ For the PI-controller, the sensitivity continues to decrease at lower frequencie
 The same decreasing trend at lower frequencies can be observed for the design model.
 
 ![PI-regelaar_ontwerpmodel_S_nieuw](https://github.com/user-attachments/assets/6fa20ae7-b6b3-402a-a060-3232867374fd)
+
 *Figure 4: Magnitude plot of the sensitivity function with PI-controller for the design model*
 
 
