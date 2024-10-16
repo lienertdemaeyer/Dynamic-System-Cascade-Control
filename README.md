@@ -367,15 +367,19 @@ $$
 ### **PI-controller evaluation model**
 
 The transfer function is given by:
+
 $$ G_{rc}(s) = K_{rc}(1 + \frac{1}{\tau_{ic}s}) $$
 
 The PI-controller acts as an integrator and introduces a new state into the system: $v_{in}$. The phase form of the PI-controller is described as:
+
 $$ v_{in} = K_{rc}(x_{r} - x) + \frac{K_{rc}}{\tau_{ic}} \int_{0}^{x} (x_{r} - x) \,dx $$
 
 Working out the integral gives:
+
 $$ v_{in} =  K_{rc}(1 + \frac{1}{\tau_{ic}s}) (x_{r} - x) $$
 
 And $\dot{v_{in}}$ with $\dot{x_{r}} = 0$ becomes:
+
 $$ \dot{v_{in}} = -K_{rc} \dot{x} + \frac{K_{rc}}{\tau_{ic}} x_{r} - \frac{K_{rc}}{\tau_{ic}} x $$
 
 For the evaluation model, $v_{in}$ is now also considered as a state:
