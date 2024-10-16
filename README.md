@@ -343,7 +343,7 @@ $$
 \dot{x_2} = -\frac{k}{m}x_1 - \frac{c}{m}x_2 + \frac{K_c K_e}{mL}x_1 - \frac{K_c^2}{mL}r_v + \frac{K_c}{mR}v_{ruis}
 $$
 
-Thus, the state-space equation for the design model with a P-controller becomes:
+Thus, the state-space equation for the design model with a P-controller is:
 
 $$
 \begin{bmatrix}
@@ -372,6 +372,7 @@ r_v
 \end{bmatrix}
 v_{ruis}
 $$
+
 
 
 
