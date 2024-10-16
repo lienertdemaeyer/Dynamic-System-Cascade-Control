@@ -276,81 +276,14 @@ Simulations were carried out for different values of $K_e$ and $c$. Key observat
 
 ### **P-controller evaluation model**
 For a P-controller, the following holds:
+
 $$ v_{in} = K_{rc}(x_r - x) $$
+
 Let $x_1 = x$
+
 $$ v_{in} = K_{rc}(x_r - x_1) $$
 
 Substituting this into the state equation of the solenoid valve derived in Section 1.2.1, where $v = v_{in} + v_{noise}$, gives:
-
-$$
-\begin{bmatrix}
-\dot{x_1}\\
-\dot{x_2}\\
-\dot{x_3}\\
-\end{bmatrix}=
-\begin{bmatrix}
-0 & 1 & 0\\
--\frac{k}{m} & -\frac{c}{m} & \frac{Kc}{m}\\
-0 & -\frac{Ke}{L} & -\frac{R}{L}\\
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\
-x_2\\
-x_3\\
-\end{bmatrix}+
-\begin{bmatrix}
-0\\
-0\\
-\frac{1}{L}\\
-\end{bmatrix}
-(K_{rc}x_r - K_{rc}x_1 + v_{noise})
-$$
-
-$$
-\begin{bmatrix}
-\dot{x_1}\\
-\dot{x_2}\\
-\dot{x_3}\\
-\end{bmatrix}=
-\begin{bmatrix}
-0 & 1 & 0\\
--\frac{k}{m} & -\frac{c}{m} & \frac{Kc}{m}\\
-0 & -\frac{Ke}{L} & -\frac{R}{L}\\
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\
-x_2\\
-x_3\\
-\end{bmatrix}+
-\begin{bmatrix}
-0\\
-0\\
-\frac{K_{rc}x_r}{L} - \frac{K_{rc}x_1}{L} + \frac{v_{noise}}{L}\\
-\end{bmatrix}
-$$
-
-$$
-\begin{bmatrix}
-\dot{x_1}\\
-\dot{x_2}\\
-\dot{x_3}\\
-\end{bmatrix}=
-\begin{bmatrix}
-0 & 1 & 0\\
--\frac{k}{m} & -\frac{c}{m} & \frac{Kc}{m}\\
--\frac{K_{rc}}{L} & -\frac{Ke}{L} & -\frac{R}{L}\\
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\
-x_2\\
-x_3\\
-\end{bmatrix}+
-\begin{bmatrix}
-0\\
-0\\
-\frac{K_{rc}x_r}{L} + \frac{v_{noise}}{L}\\
-\end{bmatrix}
-$$
 
 $$
 \begin{bmatrix}
