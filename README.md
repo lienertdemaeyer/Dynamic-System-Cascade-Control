@@ -187,68 +187,29 @@ $$
 The state-space representation is:
 
 $$
-\begin{bmatrix}
+\begin{pmatrix}
 \dot{x}_1 \\ \dot{x}_2 \\ \dot{x}_3
-\end{bmatrix} =
+\end{pmatrix}
+=
 \begin{bmatrix}
 0 & 1 & 0 \\
 -\dfrac{k}{m} & -\dfrac{c}{m} & \dfrac{K_c}{m} \\
 0 & -\dfrac{K_e}{L} & -\dfrac{R}{L}
 \end{bmatrix}
-\begin{bmatrix}
+\begin{pmatrix}
 x_1 \\ x_2 \\ x_3
-\end{bmatrix}
+\end{pmatrix}
 +
-\begin{bmatrix}
+\begin{pmatrix}
 0 \\ 0 \\ \dfrac{1}{L}
-\end{bmatrix} v
+\end{pmatrix} v
 $$
 
 
 
-test test
 
-\[
-\begin{bmatrix}
-\dot{x_1}\\
-\dot{x_2}\\
-\dot{x_3}\\
-\end{bmatrix}=
-\begin{bmatrix}
-0 & 1 & 0\\
--\frac{k}{m} & -\frac{c}{m} & \frac{Kc}{m}\\
-0 & -\frac{Ke}{L} & -\frac{R}{L}\\
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\
-x_2\\
-x_3\\
-\end{bmatrix}+
-\begin{bmatrix}
-0\\
-0\\
-\frac{1}{L}\\
-\end{bmatrix}
-v
-\]
 
-\[
-y=
-\begin{bmatrix}
-1 & 0 & 0\\
-\alpha & 0 & 0\\
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\
-x_2\\
-x_3\\
-\end{bmatrix}
-\end{equation}
-\]
 
-met $\alpha$ gelijk aan:
-
-\[\alpha=C_d\pi d_{a1}\sqrt{P_s\frac{2}{\rho}}x\]
 
 
 
