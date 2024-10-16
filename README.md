@@ -206,6 +206,51 @@ $$
 
 
 
+test test
+
+\[
+\begin{bmatrix}
+\dot{x_1}\\
+\dot{x_2}\\
+\dot{x_3}\\
+\end{bmatrix}=
+\begin{bmatrix}
+0 & 1 & 0\\
+-\frac{k}{m} & -\frac{c}{m} & \frac{Kc}{m}\\
+0 & -\frac{Ke}{L} & -\frac{R}{L}\\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{bmatrix}+
+\begin{bmatrix}
+0\\
+0\\
+\frac{1}{L}\\
+\end{bmatrix}
+v
+\]
+
+\[
+y=
+\begin{bmatrix}
+1 & 0 & 0\\
+\alpha & 0 & 0\\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2\\
+x_3\\
+\end{bmatrix}
+\end{equation}
+\]
+
+met $\alpha$ gelijk aan:
+
+\[\alpha=C_d\pi d_{a1}\sqrt{P_s\frac{2}{\rho}}x\]
+
+
 
 
 
