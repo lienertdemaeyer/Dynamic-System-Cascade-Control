@@ -396,25 +396,21 @@ $$
 The equations for $v_{in}$ derived above, the mechanical valve, and the electrical coil derived in Section 1.2.1 are:
 
 $$
-
 \begin{array}{ll}
     \ddot{x} = -\frac{k}{m} x - \frac{c}{m} \dot{x} + \frac{K_c}{m} i \\
     \frac{di}{dt} = -\frac{K_e}{L} \dot{x} - \frac{R}{L} i + \frac{v}{L} \\
     \dot{v_{in}} = -K_{rc} \dot{x} + \frac{K_{rc}}{\tau_{ic}} x_{r} - \frac{K_{rc}}{\tau_{ic}} x \\
 \end{array}
-
 $$
 
 With the above states and with $v = v_{in} + v_{noise}$ substituted, this gives:
 
 $$
-
 \begin{array}{ll}
     \dot{x_2} = -\frac{k}{m} x_1 - \frac{c}{m} x_2 + \frac{K_c}{m} x_3 \\
     \dot{x_3} = -\frac{K_e}{L} x_2 - \frac{R}{L} x_3 + \frac{v_{in} + v_{noise}}{L} \\
     \dot{x_4} = -K_{rc} x_2 + \frac{K_{rc}}{\tau_{ic}} x_{r} - \frac{K_{rc}}{\tau_{ic}} x_1 \\
 \end{array}
-
 $$
 
 The state equation in matrix form becomes:
