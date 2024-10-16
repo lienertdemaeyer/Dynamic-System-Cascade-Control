@@ -619,38 +619,40 @@ $$
 
 #### Key Steps:
 1. **Characteristic Equation**: Rewrite the characteristic equation as:
+2. 
    $$
    1 + KG(s) = 1 + \frac{K(s+1)}{s^4+4s^3+6s^2+4s} = 0
    $$
 
-2. **Factorization**: Factor the numerator and denominator:
+3. **Factorization**: Factor the numerator and denominator:
+4. 
    $$
    1 + KG(s) = 1 + \frac{K(s+1)}{s(s+2)(s+1 \pm j)}
    $$
 
-3. **Poles and Zeros**: 
+5. **Poles and Zeros**: 
    - Zero: $z_1 = -1$
    - Poles: $p_1 = 0$, $p_2 = -2$, $p_3 = -1 - j$, $p_4 = -1 + j$
 
    ![pn1](https://github.com/user-attachments/assets/5af0b392-a10d-4d9d-8196-c0a9e1b972e5)
 
-4. **Branches of the Pole-Zero Plot**: 
+6. **Branches of the Pole-Zero Plot**: 
    - Four branches exist: one ends at the finite zero $z_1 = -1$, while the remaining three tend to infinity. 
 
-5. **Segments on the Real Axis**: 
+7. **Segments on the Real Axis**: 
    - Points on the real axis between $(-\infty, -2]$ and $[-1, 0]$ belong to the pole-zero plot as they satisfy the angle criterion.
 
-6. **Symmetry**: 
+8. **Symmetry**: 
    - The pole-zero plot is symmetric about the real axis.
 
-7. **Departure and Arrival Angles**: 
+9. **Departure and Arrival Angles**: 
    - The departure angle for pole $p_1 = 0$: $\vartheta_{p_1} = 180^\circ$
    - The departure angle for pole $p_2 = -2$: $\vartheta_{p_2} = 180^\circ$
    - The departure angles for poles $p_3 = -1 - j$ and $p_4 = -1 + j$: $\vartheta_{p_3} = \vartheta_{p_4} = 0^\circ$
 
    - The arrival angle at zero $z_1 = -1$: $\vartheta_{z_1} = 0^\circ$
 
-8. **Asymptotes**: 
+10. **Asymptotes**: 
    - The intercept $\sigma_c$ is given by:
      $$
      \sigma_c = -\frac{\sum z_i - \sum p_j}{n-m} = -1
