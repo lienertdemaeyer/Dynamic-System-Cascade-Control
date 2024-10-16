@@ -619,16 +619,10 @@ $$
 
 #### Key Steps:
 1. **Characteristic Equation**: Rewrite the characteristic equation as:
-2. 
-   $
-   1 + KG(s) = 1 + \frac{K(s+1)}{s^4+4s^3+6s^2+4s} = 0
-   $
+2. $1 + KG(s) = 1 + \frac{K(s+1)}{s^4+4s^3+6s^2+4s} = 0$
 
 3. **Factorization**: Factor the numerator and denominator:
-4. 
-   $
-   1 + KG(s) = 1 + \frac{K(s+1)}{s(s+2)(s+1 \pm j)}
-   $
+4. $1 + KG(s) = 1 + \frac{K(s+1)}{s(s+2)(s+1 \pm j)}$
 
 5. **Poles and Zeros**: 
    - Zero: $z_1 = -1$
