@@ -72,8 +72,8 @@ $$
 
 ### Key Equations and Simulation Insights
 
-### Evaluatiemodel
-The evaluatiemodel captures the full dynamics, including the electrical coil. The system is modeled as:
+### Evaluation Model
+The evaluation model captures the full dynamics, including the electrical coil. The system is modeled as:
 
 $$
 \begin{bmatrix}
@@ -115,8 +115,8 @@ x_3
 \end{bmatrix}
 $$
 
-### Ontwerpmodel
-In the ontwerpmodel, the electrical coil dynamics are neglected. We assume $\dot{i} = 0$, leading to the reduced system:
+### Design Model
+In the design model, the electrical coil dynamics are neglected. We assume $\dot{i} = 0$, leading to the reduced system:
 
 $$
 \dot{x_2} = -\frac{k}{m}x_1 - \left(\frac{c}{m} + \frac{K_e K_c}{mR}\right)x_2 + \frac{K_c}{mR}v
@@ -144,6 +144,7 @@ x_2
 \end{bmatrix}
 v
 $$
+
 
 
 #### MATLAB Simulation Results
